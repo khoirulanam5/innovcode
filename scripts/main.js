@@ -1,6 +1,11 @@
 /* =========================================================
    PROYEK
    ========================================================= */
+// CATATAN: pastikan di HTML, elemen <div id="portfolio-grid"> TIDAK lagi
+// memakai class "reveal" ganda (cukup class="row g-4"), karena kartu di
+// dalamnya sudah masing-masing punya class .reveal sendiri. Reveal ganda
+// pada container bisa membuat seluruh isi grid ikut nyangkut opacity:0
+// jika observer parent-nya gagal trigger duluan.
 const featuredProjects = [
   { id: 33, title: 'Aplikasi Rekomendasi Kamar Hotel', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/33.fpgrowth/1.PNG', github: 'https://github.com/khoirulanam5/Hotel-Room-Facility-Recommendation-System-with-Apriori-and-FP-Growth.git', desc: 'Sistem rekomendasi fasilitas kamar hotel menggunakan algoritma Apriori dan FP-Growth untuk menemukan pola asosiasi dari data transaksi tamu secara efisien.', images: Array.from({ length: 10 }, (_, i) => `images/33.fpgrowth/${i + 1}.PNG`) },
   { id: 32, title: 'Aplikasi Manajemen Kasir', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/32.kasir/8.PNG', github: 'https://github.com/khoirulanam5/kasir.git', desc: 'Aplikasi kasir berbasis web untuk manajemen transaksi penjualan, stok produk, laporan harian, dan pengelolaan data pelanggan secara real-time.', images: Array.from({ length: 10 }, (_, i) => `images/32.kasir/${i + 1}.PNG`) },
@@ -108,6 +113,35 @@ const revealObserver = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 /* =========================================================
+   FIX: fallback untuk elemen .reveal yang gagal ter-trigger
+   Bug: di beberapa browser mobile, IntersectionObserver kadang
+   tidak pernah menembak elemen yang sebenarnya sudah berada di
+   dalam viewport (terutama saat tinggi container berubah cepat
+   akibat render dinamis, seperti grid kartu Portofolio). Akibatnya
+   elemen permanen nyangkut di opacity:0 (class .reveal tanpa
+   .visible) — terlihat "hilang" padahal tetap ada di DOM dan
+   tetap bisa diklik (makanya modal proyek tetap bisa terbuka).
+   Solusi: setelah beberapa saat, paksa tampilkan elemen .reveal
+   yang posisinya sudah berada di area layar (atau sedikit di
+   bawahnya) tapi belum juga mendapat class .visible.
+   ========================================================= */
+function revealFallbackSweep() {
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight + 200 && rect.bottom > -200) {
+      el.classList.add('visible');
+      revealObserver.unobserve(el);
+    }
+  });
+}
+// Sapuan awal setelah render pertama selesai
+setTimeout(revealFallbackSweep, 1500);
+// Sapuan tambahan tiap kali user scroll (murah, hanya baca posisi)
+window.addEventListener('scroll', revealFallbackSweep, { passive: true });
+// Sapuan saat orientasi/ukuran layar berubah (rotate HP, dsb.)
+window.addEventListener('resize', revealFallbackSweep);
+
+/* =========================================================
    RENDER PORTFOLIO PREVIEW
    ========================================================= */
 const grid = document.getElementById('portfolio-grid');
@@ -135,6 +169,10 @@ if (grid) {
     revealObserver.observe(col.querySelector('.reveal'));
     col.querySelector('.pf-card').addEventListener('click', () => openPfModal(p));
   });
+  // Jalankan sapuan sekali lagi setelah semua kartu selesai di-render,
+  // supaya kartu yang sudah berada di viewport (mis. layar besar / desktop)
+  // langsung ikut diperiksa tanpa menunggu 1.5 detik pertama.
+  requestAnimationFrame(revealFallbackSweep);
 }
 
 /* =========================================================
