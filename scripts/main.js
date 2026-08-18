@@ -44,7 +44,7 @@ const testimonials = [
   { text: 'Rekomendasi kamar berbasis data tamu benar-benar membantu tim kami membuat keputusan bundling fasilitas yang lebih tepat sasaran.', name: 'Manajer Operasional', role: 'Industri Perhotelan' },
   { text: 'Sistem rekam medis yang dibangun sangat memudahkan pencarian riwayat pasien. Antrian di loket jadi jauh lebih cepat sejak pakai sistem ini.', name: 'Kepala Klinik', role: 'Layanan Kesehatan' },
   { text: 'Aplikasi presensi berbasis QR code sangat membantu HR kami. Rekap kehadiran yang dulu manual sekarang otomatis dan minim kesalahan.', name: 'Staf HRD', role: 'Perusahaan Manufaktur' },
-  { text: 'Tim KA InnovCode responsif dan selalu update progres tanpa diminta. Website sekolah kami jadi lebih profesional di mata orang tua murid.', name: 'Kepala Sekolah', role: 'Lembaga Pendidikan' },
+  { text: 'Tim sangat responsif dan selalu update progres tanpa diminta. Website sekolah kami jadi lebih profesional di mata orang tua murid.', name: 'Kepala Sekolah', role: 'Lembaga Pendidikan' },
   { text: 'Sistem inventori gudang membantu kami memantau stok secara real-time. Barang hilang atau selisih catatan jauh berkurang.', name: 'Manajer Gudang', role: 'Distribusi & Logistik' },
   { text: 'Toko online yang dibuat mudah dikelola meski kami tidak paham teknis. Panduan penggunaannya juga jelas dan lengkap.', name: 'Pemilik Toko', role: 'UMKM Fashion' },
   { text: 'Sistem pengajuan cuti pegawai sangat membantu proses approval berjenjang. Tidak perlu lagi bolak-balik kertas antar divisi.', name: 'Staf Kepegawaian', role: 'Perusahaan Swasta' },
@@ -231,13 +231,14 @@ const counterObserver = new IntersectionObserver(entries => {
     if (!entry.isIntersecting) return;
     const el = entry.target;
     const target = parseInt(el.dataset.count, 10);
+    const suffix = el.dataset.suffix || '';
     const duration = 1200;
     const start = performance.now();
     function tick(now) {
       const progress = Math.min((now - start) / duration, 1);
-      el.textContent = Math.floor(progress * target);
+      el.textContent = Math.floor(progress * target) + (progress < 1 ? '' : suffix);
       if (progress < 1) requestAnimationFrame(tick);
-      else el.textContent = target;
+      else el.textContent = target + suffix;
     }
     requestAnimationFrame(tick);
     counterObserver.unobserve(el);
