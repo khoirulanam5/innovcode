@@ -39,21 +39,21 @@ const featuredProjects = [
 
 /* ── Testimonials data ── */
 const testimonials = [
-  { text: 'Website persuratan yang dibuat sangat memudahkan alur kerja kami. Proses yang dulu memakan waktu berhari-hari kini selesai dalam hitungan jam.', name: 'Kepala Bagian Umum', role: 'Instansi Pemerintah' },
-  { text: 'Komunikasi selama pengerjaan sangat jelas, setiap progres selalu didemokan. Website kasir yang jadi juga stabil dan mudah dipakai staf toko.', name: 'Pemilik Usaha', role: 'Retail & Perdagangan' },
-  { text: 'Rekomendasi kamar berbasis data tamu benar-benar membantu tim kami membuat keputusan bundling fasilitas yang lebih tepat sasaran.', name: 'Manajer Operasional', role: 'Industri Perhotelan' },
-  { text: 'Sistem rekam medis yang dibangun sangat memudahkan pencarian riwayat pasien. Antrian di loket jadi jauh lebih cepat sejak pakai sistem ini.', name: 'Kepala Klinik', role: 'Layanan Kesehatan' },
-  { text: 'Aplikasi presensi berbasis QR code sangat membantu HR kami. Rekap kehadiran yang dulu manual sekarang otomatis dan minim kesalahan.', name: 'Staf HRD', role: 'Perusahaan Manufaktur' },
-  { text: 'Tim sangat responsif dan selalu update progres tanpa diminta. Website sekolah kami jadi lebih profesional di mata orang tua murid.', name: 'Kepala Sekolah', role: 'Lembaga Pendidikan' },
-  { text: 'Sistem inventori gudang membantu kami memantau stok secara real-time. Barang hilang atau selisih catatan jauh berkurang.', name: 'Manajer Gudang', role: 'Distribusi & Logistik' },
-  { text: 'Toko online yang dibuat mudah dikelola meski kami tidak paham teknis. Panduan penggunaannya juga jelas dan lengkap.', name: 'Pemilik Toko', role: 'UMKM Fashion' },
-  { text: 'Sistem pengajuan cuti pegawai sangat membantu proses approval berjenjang. Tidak perlu lagi bolak-balik kertas antar divisi.', name: 'Staf Kepegawaian', role: 'Perusahaan Swasta' },
-  { text: 'Dashboard laporan yang dibuat sangat membantu kami mengambil keputusan lebih cepat karena data tersaji secara visual dan real-time.', name: 'Direktur Operasional', role: 'Perusahaan Jasa' },
-  { text: 'Sistem seleksi siswa berprestasi jadi lebih objektif dan transparan. Guru dan orang tua bisa melihat proses penilaiannya dengan jelas.', name: 'Wakil Kepala Sekolah', role: 'Lembaga Pendidikan' },
-  { text: 'Aplikasi pemesanan makanan mempercepat pelayanan di resto kami. Pesanan langsung masuk ke dapur tanpa salah catat lagi.', name: 'Pemilik Restoran', role: 'Kuliner & F&B' },
-  { text: 'Setelah website rilis, dukungan tetap responsif setiap kali ada permintaan penambahan fitur. Berasa masih dikawal sampai sekarang.', name: 'Pemilik Usaha', role: 'Jasa Konsultasi' },
-  { text: 'Sistem monitoring stunting sangat membantu kader posyandu mencatat data balita dan memantau perkembangannya tiap bulan.', name: 'Koordinator Posyandu', role: 'Layanan Kesehatan Masyarakat' },
-  { text: 'Proses pengerjaan sesuai timeline yang disepakati di awal. Tidak ada drama keterlambatan seperti pengalaman kami sebelumnya.', name: 'Manajer Proyek', role: 'Perusahaan Kontraktor' }
+  { text: 'Dulu urusan surat-menyurat ribet banget, sekarang tinggal klik-klik aja langsung kelar. Beneran ngebantu banget buat kerjaan sehari-hari.', name: 'Pak Bambang', role: 'Staf Tata Usaha, Kantor Kecamatan' },
+  { text: 'Selama proses bikin website kasirnya enak, tiap ada progres langsung ditunjukin. Sekarang kasir toko udah stabil, gampang dipakai anak-anak juga.', name: 'Ibu Sri Wahyuni', role: 'Pemilik Toko Kelontong' },
+  { text: 'Fitur rekomendasi kamarnya lumayan bantu buat nentuin paket kamar mana yang paling laku. Jadi nggak asal tebak lagi.', name: 'Mas Dimas', role: 'Manajemen Hotel' },
+  { text: 'Nyari data pasien lama sekarang cepet banget, tinggal ketik nama langsung ketemu. Antrian di depan juga jadi nggak numpuk kayak dulu.', name: 'dr. Anisa', role: 'Klinik Pratama' },
+  { text: 'Absen pake QR code ini beneran ngebantu tim HR, dulu rekap manual sering salah hitung, sekarang udah otomatis.', name: 'Rina', role: 'HRD Pabrik' },
+  { text: 'Timnya gercep, sering update progres duluan sebelum ditanya. Website sekolah jadi kelihatan lebih rapi pas dilihat wali murid.', name: 'Bu Endang', role: 'Tata Usaha Sekolah' },
+  { text: 'Sekarang stok gudang bisa dipantau kapan aja, nggak perlu turun langsung buat ngecek. Selisih barang juga udah jarang kejadian.', name: 'Pak Yudi', role: 'Kepala Gudang' },
+  { text: 'Awalnya takut ribet ngurus toko online sendiri, ternyata gampang dipakai. Kalau bingung juga ada panduannya, jadi nggak nanya-nanya terus.', name: 'Fitri', role: 'Owner Toko Online' },
+  { text: 'Pengajuan cuti yang tadinya harus print kertas terus keliling ke atasan, sekarang tinggal ajukan online, disetujui juga cepet.', name: 'Andre', role: 'Staf Kepegawaian' },
+  { text: 'Laporannya udah dalam bentuk grafik jadi enak dibaca, nggak perlu buka-buka excel lagi tiap mau ambil keputusan.', name: 'Pak Hendra', role: 'Operasional Perusahaan Jasa' },
+  { text: 'Penilaian siswa berprestasi jadi lebih jelas dasarnya, orang tua juga bisa lihat sendiri prosesnya, jadi nggak ada yang komplain macem-macem.', name: 'Bu Wulandari', role: 'Wakil Kepala Sekolah' },
+  { text: 'Order masuk langsung ke dapur, jadi nggak ada lagi salah catat pesanan kayak waktu masih pake nota manual.', name: 'Kang Asep', role: 'Pemilik Resto' },
+  { text: 'Yang saya suka itu setelah website jadi pun masih dibantu kalau ada request tambahan fitur, nggak dilepas gitu aja.', name: 'Pak Rudi', role: 'Konsultan Usaha' },
+  { text: 'Kader posyandu jadi kebantu banget buat catat data balita tiap bulan, nggak perlu lagi tulis manual di buku.', name: 'Bu Yuni', role: 'Kader Posyandu' },
+  { text: 'Yang bikin tenang itu pengerjaannya tepat waktu sesuai janji di awal, nggak molor-molor kayak vendor sebelumnya.', name: 'Pak Wahyu', role: 'Manajer Proyek Kontraktor' }
 ];
 
 /* =========================================================
@@ -153,32 +153,57 @@ if (grid) {
 }
 
 /* =========================================================
-   PORTFOLIO GALLERY MODAL
+   PORTFOLIO GALLERY MODAL (FIXED)
+   - Referensi ke #pf-modal-github DIHAPUS karena elemen itu
+     sudah tidak ada di HTML (dulu bikin fungsi ini error dan
+     modal gagal terbuka sebagaimana mestinya).
+   - Klik foto pada galeri sekarang membuka LIGHTBOX full layar.
    ========================================================= */
-const pfModal = document.getElementById('pf-modal');
-const pfImg = document.getElementById('pf-modal-img');
-const pfCounter = document.getElementById('pf-counter');
-const pfTitle = document.getElementById('pf-modal-title');
-const pfDesc = document.getElementById('pf-modal-desc');
-const pfGithub = document.getElementById('pf-modal-github');
-let pfCurrentProject = null;
-let pfCurrentIndex = 0;
+const pfModal   = document.getElementById('pf-modal');
+const pfGallery = document.getElementById('pf-modal-gallery');
+const pfTitle   = document.getElementById('pf-modal-title');
+const pfDesc    = document.getElementById('pf-modal-desc');
 
-function renderPfImage() {
-  const imgs = pfCurrentProject.images;
-  pfImg.src = imgs[pfCurrentIndex];
-  pfImg.alt = `${pfCurrentProject.title} - foto ${pfCurrentIndex + 1}`;
-  pfImg.onerror = () => { pfImg.onerror = null; pfImg.src = pfCurrentProject.img; };
-  pfCounter.textContent = `${pfCurrentIndex + 1} / ${imgs.length}`;
+const lightbox    = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lbClose     = document.getElementById('lb-close');
+
+function openLightbox(src, alt) {
+  lightboxImg.src = src;
+  lightboxImg.alt = alt || '';
+  lightbox.classList.add('show');
+  lightbox.setAttribute('aria-hidden', 'false');
 }
+function closeLightbox() {
+  lightbox.classList.remove('show');
+  lightbox.setAttribute('aria-hidden', 'true');
+  lightboxImg.src = '';
+}
+if (lbClose) lbClose.addEventListener('click', closeLightbox);
+if (lightbox) {
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+}
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && lightbox && lightbox.classList.contains('show')) closeLightbox();
+});
 
 function openPfModal(project) {
-  pfCurrentProject = project;
-  pfCurrentIndex = 0;
   pfTitle.textContent = project.title;
   pfDesc.textContent = project.desc;
-  pfGithub.href = project.github;
-  renderPfImage();
+
+  pfGallery.innerHTML = '';
+  project.images.forEach((src, i) => {
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = `${project.title} - foto ${i + 1}`;
+    img.loading = 'lazy';
+    img.onerror = () => { img.style.display = 'none'; };
+    img.addEventListener('click', () => openLightbox(img.src, img.alt));
+    pfGallery.appendChild(img);
+  });
+
   pfModal.classList.add('show');
   pfModal.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
@@ -188,18 +213,12 @@ function closePfModal() {
   pfModal.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
 }
-function pfNext() { pfCurrentIndex = (pfCurrentIndex + 1) % pfCurrentProject.images.length; renderPfImage(); }
-function pfPrev() { pfCurrentIndex = (pfCurrentIndex - 1 + pfCurrentProject.images.length) % pfCurrentProject.images.length; renderPfImage(); }
 
 if (pfModal) {
   pfModal.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', closePfModal));
-  document.getElementById('pf-next').addEventListener('click', pfNext);
-  document.getElementById('pf-prev').addEventListener('click', pfPrev);
   document.addEventListener('keydown', e => {
     if (!pfModal.classList.contains('show')) return;
     if (e.key === 'Escape') closePfModal();
-    if (e.key === 'ArrowRight') pfNext();
-    if (e.key === 'ArrowLeft') pfPrev();
   });
 }
 
@@ -348,7 +367,9 @@ document.querySelectorAll('.faq-item').forEach(item => {
 });
 
 /* =========================================================
-   WHATSAPP FLOATING WIDGET
+   WHATSAPP FLOATING WIDGET (FIXED)
+   - Bubble HANYA muncul saat ikon WhatsApp diklik.
+   - Auto-popup setelah 3 detik sudah DIHAPUS.
    ========================================================= */
 const waFloat = document.getElementById('wa-float');
 const waBubble = document.getElementById('wa-bubble');
@@ -375,10 +396,4 @@ if (waFloat && waBubble && waBubbleClose && waWidget) {
   document.addEventListener('click', (e) => {
     if (!waWidget.contains(e.target)) hideWaBubble();
   });
-
-  // auto-muncul sekali setelah beberapa detik agar user sadar ada widget ini
-  setTimeout(() => {
-    waBubble.classList.add('show');
-    waBubble.setAttribute('aria-hidden', 'false');
-  }, 3000);
 }

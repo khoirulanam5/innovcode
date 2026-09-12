@@ -21,10 +21,12 @@ Website ini dibangun murni dengan HTML, CSS, dan JavaScript (tanpa framework/bui
 - **Hero section** dengan animasi mengetik (typing effect) dan counter statistik yang berjalan saat elemen masuk ke viewport.
 - **Navbar responsif** dengan menu mobile (hamburger + overlay).
 - **Scroll reveal** — elemen muncul dengan animasi fade + slide saat discroll ke dalam viewport, menggunakan `IntersectionObserver`.
-- **Section Portofolio** — grid proyek yang di-render otomatis dari array `featuredProjects` di `main.js`, lengkap dengan modal galeri (navigasi gambar, keyboard arrow, dan tombol GitHub).
+- **Section Portofolio** — grid proyek yang di-render otomatis dari array `featuredProjects` di `main.js`, lengkap dengan modal detail proyek berisi judul, deskripsi, dan seluruh foto proyek.
+- **Lightbox foto** — klik salah satu foto di dalam modal detail proyek untuk melihatnya dalam mode full layar.
 - **Carousel testimoni otomatis** — auto-slide tiap 3.5 detik, bisa di-drag manual, dan berhenti sementara saat disentuh/di-hover.
 - **FAQ accordion**.
-- **Form kontak** terhubung ke Formspree, plus tombol WhatsApp mengambang.
+- **Widget WhatsApp mengambang** — bubble info hanya muncul saat ikon WhatsApp diklik (tidak auto-popup).
+- **Form kontak** terhubung ke Formspree.
 
 ## Cara Menjalankan
 
@@ -58,7 +60,26 @@ Lalu akses `http://localhost:8000`.
 - `scripts/main.js`: wrapper card kini eksplisit diberi `col-12 col-md-6 col-lg-4` sehingga dijamin 100% lebar di layar kecil.
 - `styles/main.css`: ditambahkan safety-net media query (`@media (max-width: 767.98px)`) yang memaksa `#portfolio-grid > div` selalu `width: 100%` dan gutter simetris, sebagai lapisan pengaman tambahan.
 
-> Catatan: seluruh teks/konten yang sudah final (copy, testimoni, FAQ, dsb.) **tidak diubah** — perbaikan di atas murni pada logika JavaScript dan aturan CSS layout.
+### 3. Modal detail proyek gagal terbuka dengan benar
+**Gejala:** saat card portofolio diklik untuk "Lihat Detail", modal tidak menampilkan galeri foto sebagaimana mestinya, dan klik foto tidak bisa dilihat dalam mode full layar.
+
+**Penyebab:** fungsi `openPfModal()` mereferensikan elemen `#pf-modal-github` (tombol GitHub) yang sudah tidak ada di markup `index.html`, sehingga `pfGithub.href = ...` melempar error dan menghentikan eksekusi fungsi sebelum galeri foto sempat dirender. Selain itu, foto-foto di galeri modal belum punya event listener untuk membuka lightbox.
+
+**Perbaikan:**
+- Referensi ke `#pf-modal-github` dihapus dari `openPfModal()`.
+- Setiap `<img>` di galeri modal kini diberi `addEventListener('click', ...)` yang memanggil `openLightbox()`, sehingga foto bisa dibuka full layar melalui elemen `#lightbox` yang sudah tersedia di `index.html`.
+
+### 4. Bubble WhatsApp otomatis muncul saat halaman dibuka
+**Gejala:** popup info WhatsApp ("Online Sekarang / Ada yang bisa kami bantu?") langsung muncul sendiri ~3 detik setelah halaman dimuat, padahal seharusnya hanya muncul saat ikon WhatsApp diklik oleh pengguna.
+
+**Penyebab:** ada `setTimeout(() => { waBubble.classList.add('show'); ... }, 3000)` di bagian WHATSAPP FLOATING WIDGET pada `main.js` yang memaksa bubble tampil otomatis.
+
+**Perbaikan:** `setTimeout` auto-show tersebut dihapus. Bubble sekarang murni dikontrol lewat `toggleWaBubble()`, yang hanya terpanggil saat tombol `#wa-float` diklik.
+
+### 5. Pembaruan teks testimoni
+**Perubahan:** kalimat testimoni dan nama pengirim pada array `testimonials` (`main.js`) diperbarui agar terdengar lebih natural dan tidak terkesan digenerate AI — bahasa dibuat lebih santai/sehari-hari, dan nama pengirim diganti dari sekadar jabatan generik (mis. "Kepala Bagian Umum") menjadi nama orang yang lebih manusiawi lengkap dengan peran singkatnya.
+
+> Catatan: perbaikan pada nomor 1–4 murni pada logika JavaScript (dan sebagian CSS untuk nomor 2) — tidak mengubah copy/konten yang sudah final. Perbaikan nomor 5 murni perubahan teks pada section Testimoni saja.
 
 ## Kontak
 
