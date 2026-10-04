@@ -10,51 +10,45 @@
     ['Layanan', 'Services'], ['Harga', 'Pricing'], ['Proses', 'Process'], ['Portofolio', 'Portfolio'], ['Kontak', 'Contact'],
     ['Mulai Proyek', 'Start a Project'],
     /* hero */
-    ['Website bukan sekadar tampilan, tetapi investasi untuk meningkatkan kredibilitas, efisiensi, dan pertumbuhan bisnis. Kami siap mewujudkan solusi digital yang tepat untuk Anda.',
-     'A website is more than a look — it is an investment in credibility, efficiency, and business growth. We are ready to deliver the right digital solution for you.'],
+    ['Tampil profesional, mudah dikelola, dan siap melayani pelanggan Anda 24 jam. Kami bangun sesuai kebutuhan, bukan sekadar tampilan.',
+     'Look professional, stay easy to manage, and serve your customers 24/7. We build around your needs, not just appearance.'],
     ['Konsultasi', 'Consultation'], ['Proyek Selesai', 'Projects Completed'], ['Tahun Pengalaman', 'Years of Experience'], ['Tepat Rilis', 'On-Time Release'],
     ['Support KA Inovasi Digital', 'KA Inovasi Digital Support'], ['Mulai Bangun', 'Start Building'], ['Sekarang', 'Now'],
     /* about */
-    ['Tentang Kami', 'About Us'], ['Solusi digital yang dibangun', 'Digital solutions built'], ['untuk mendukung pertumbuhan bisnis Anda.', 'to support your business growth.'],
-    ['KA Inovasi Digital adalah software house yang menyediakan layanan pembuatan website, sistem informasi, dan aplikasi web yang dirancang sesuai kebutuhan bisnis, instansi, maupun lembaga pendidikan.',
-     'KA Inovasi Digital is a software house providing websites, information systems, and web applications tailored to the needs of businesses, institutions, and educational organizations.'],
-    ['Kami percaya bahwa setiap organisasi memiliki kebutuhan yang berbeda. Karena itu, setiap proyek kami dibangun secara khusus dengan mengutamakan desain yang profesional, performa yang optimal, serta sistem yang mudah digunakan dan mudah dikembangkan.',
-     'We believe every organization has different needs. That is why each project is custom-built with professional design, optimal performance, and a system that is easy to use and easy to extend.'],
-    ['Sebelum proses pengembangan dimulai, kami meluangkan waktu untuk memahami tujuan, proses bisnis, serta tantangan yang dihadapi klien agar solusi yang dihasilkan benar-benar memberikan manfaat dan nilai jangka panjang.',
-     'Before development begins, we take the time to understand our clients\' goals, business processes, and challenges so the solution delivers real, long-term value.'],
+    ['Tentang Kami', 'About Us'],
+    ['Solusi digital yang dibangun', 'Digital solutions built'], ['untuk pertumbuhan bisnis Anda.', 'for your business growth.'],
+    ['KA Inovasi Digital adalah software house di Jepara yang membuat website, sistem informasi, dan aplikasi web untuk bisnis, instansi, dan lembaga pendidikan.',
+     'KA Inovasi Digital is a software house in Jepara building websites, information systems, and web apps for businesses, institutions, and schools.'],
+    ['Setiap proyek kami bangun sesuai kebutuhan Anda. Hasilnya tampilan profesional, performa cepat, dan sistem yang mudah digunakan serta dikembangkan.',
+     'Every project is built around your needs, giving you a professional look, fast performance, and a system that is easy to use and extend.'],
+    ['Sebelum mulai, kami memahami dulu tujuan dan proses bisnis Anda, agar hasilnya memberi manfaat jangka panjang.',
+     'Before starting, we first understand your goals and business processes so the result delivers long-term value.'],
     ['Misi', 'Mission'], ['Nilai', 'Values'],
     ['Website yang mudah dipakai, sesuai anggaran, dan benar-benar membantu klien.', 'Websites that are easy to use, within budget, and genuinely helpful to clients.'],
     ['Rapi, transparan, dan bertanggung jawab atas setiap proyek yang kami serahkan.', 'Neat, transparent, and accountable for every project we deliver.'],
-    ['Konsultasi Kebutuhan', 'Needs Consultation'], ['Diskusi santai memahami tujuan & target website Anda', 'A relaxed discussion to understand your website goals & targets'],
-    ['Desain & Pengembangan', 'Design & Development'], ['Tampilan menarik dengan sistem yang stabil di baliknya', 'An attractive look backed by a stable system'],
-    ['Aman & Siap Berkembang', 'Secure & Ready to Grow'], ['Standar yang mudah dirawat dan ditambah fitur', 'Standards that are easy to maintain and extend'],
-    ['Dukungan Purna Rilis', 'Post-Launch Support'], ['Pendampingan dan perawatan setelah online', 'Guidance and maintenance after going live'],
+    ['Lebih Dipercaya Pelanggan', 'Earn Customer Trust'], ['Tampilan profesional meningkatkan kredibilitas bisnis Anda', 'A professional look boosts your business credibility'],
+    ['Pekerjaan Lebih Efisien', 'More Efficient Work'], ['Proses manual diganti sistem yang rapi dan otomatis', 'Manual tasks replaced by a neat, automated system'],
+    ['Mudah Dikelola & Dikembangkan', 'Easy to Manage & Extend'], ['Fitur bisa ditambah kapan saja, kode sumber milik Anda', 'Add features anytime, and you own the source code'],
+    ['Didampingi Setelah Online', 'Supported After Launch'], ['Perawatan dan perbaikan tetap kami bantu', 'We still help with maintenance and fixes'],
     /* services */
     ['Dari yang simpel,', 'From the simple,'], ['sampai yang kompleks.', 'to the complex.'],
     ['Butuh website yang menarik, cepat, dan sesuai kebutuhan bisnis atau organisasi Anda? Kami siap membantu.', 'Need a website that is attractive, fast, and fits your business or organization? We are here to help.'],
-    ['Web Instansi', 'Institutional Website'], ['Sistem ERP', 'ERP System'], ['Lainnya', 'Others'],
+    ['Lainnya', 'Others'],
     ['Desain Modern & Responsif', 'Modern & Responsive Design'], ['Tampilan yang enak dilihat dan rapi di berbagai perangkat, dari laptop sampai smartphone.', 'A pleasant look that stays tidy on every device, from laptops to smartphones.'],
     ['Performa Cepat & Optimal', 'Fast & Optimal Performance'], ['Website dibangun ringan sehingga cepat diakses dan nyaman digunakan pengunjung.', 'Lightweight websites that load quickly and are comfortable for visitors.'],
     ['Keamanan Website', 'Website Security'], ['Perlindungan standar untuk menjaga website dan data Anda tetap aman.', 'Standard protection to keep your website and data safe.'],
     ['Optimal di Semua Layar', 'Optimized for Every Screen'], ['Tampil rapi baik dibuka lewat komputer, tablet, maupun ponsel.', 'Looks neat whether opened on a computer, tablet, or phone.'],
     ['Fitur Sesuai Kebutuhan', 'Features That Fit Your Needs'], ['Fitur website dapat disesuaikan, dari yang sederhana sampai yang lebih lengkap.', 'Website features can be tailored, from simple to comprehensive.'],
     ['Siap Online & Berkembang', 'Ready to Go Live & Grow'], ['Website siap dipakai dan mudah dikembangkan lagi sesuai kebutuhan.', 'Ready to use and easy to develop further as needed.'],
-    /* pricing */
+    /* pricing (disamakan dengan teks di index.html) */
     ['Daftar Harga', 'Price List'], ['Paket harga transparan,', 'Transparent pricing,'], ['sesuai kebutuhan Anda.', 'tailored to your needs.'],
     ['Pilih paket yang sesuai skala bisnis Anda. Harga dapat disesuaikan lagi setelah sesi konsultasi.', 'Choose the plan that fits your business scale. Prices can be adjusted after the consultation.'],
-    ['Website Sederhana', 'Simple Website'], ['1 – 5 halaman (Home, About, dll)', '1 – 5 pages (Home, About, etc.)'], ['Desain responsif', 'Responsive design'], ['Form kontak', 'Contact form'], ['3 Hari Selesai', 'Done in 3 Days'],
-    ['Website Profil Usaha', 'Business Profile Website'], ['5 – 10 halaman (Home, About, Services, Contact, dll)', '5 – 10 pages (Home, About, Services, Contact, etc.)'], ['Desain profesional', 'Professional design'], ['Admin panel', 'Admin panel'], ['7 Hari Selesai', 'Done in 7 Days'],
-    ['Paling Diminati', 'Most Popular'], ['Login & register user', 'User login & registration'], ['Dashboard admin', 'Admin dashboard'], ['Data master', 'Master data'], ['Aplikasi internal', 'Internal applications'], ['Kustom web', 'Custom web'], ['10 Hari Selesai', 'Done in 10 Days'],
-    ['Sistem ERP multi-modul', 'Multi-module ERP system'], ['Multi-tenant & manajemen role', 'Multi-tenant & role management'], ['Integrasi API', 'API integration'], ['Arsitektur skalabel', 'Scalable architecture'], ['20+ Hari Selesai (sesuai kompleksitas)', '20+ Days (depending on complexity)'],
+    ['Website Sederhana', 'Simple Website'], ['1 – 5 halaman', '1 – 5 pages'], ['Desain profesional', 'Professional design'], ['Google Maps', 'Google Maps'], ['Form kontak', 'Contact form'], ['3 Hari Selesai', 'Done in 3 Days'],
+    ['Website Profil Usaha', 'Business Profile Website'], ['7 – 10 halaman', '7 – 10 pages'], ['Admin panel', 'Admin panel'], ['Dashboard Admin', 'Admin dashboard'], ['7 Hari Selesai', 'Done in 7 Days'],
+    ['Paling Diminati', 'Most Popular'], ['Aplikasi internal', 'Internal applications'], ['Dashboard admin', 'Admin dashboard'], ['Data master', 'Master data'], ['Kustom web', 'Custom web'], ['10 Hari Selesai', 'Done in 10 Days'],
+    ['Sistem ERP', 'ERP System'], ['Multi modul', 'Multi-module'], ['Manajemen role', 'Role management'], ['Integrasi API', 'API integration'], ['Arsitektur skalabel', 'Scalable architecture'], ['20+ Hari Selesai', '20+ Days'],
     ['Mulai Dari', 'Starting From'], ['Pilih Paket', 'Choose Plan'],
     ['Harga di atas adalah estimasi awal. Kebutuhan fitur tambahan atau kompleksitas khusus akan dibahas saat konsultasi.', 'Prices above are initial estimates. Additional features or special complexity will be discussed during the consultation.'],
-    /* why us */
-    ['Mengapa memilih', 'Why choose'], ['sebagai partner digital?', 'as your digital partner?'],
-    ['Alasan mengapa perusahaan dan UMKM mempercayakan pengerjaan sistem digital mereka kepada tim ahli kami.', 'Why companies and SMEs trust our expert team with their digital systems.'],
-    ['Diskusi', 'Discussion'], ['Kami mengomunikasikan solusi teknis dengan bahasa yang mudah dipahami, memastikan visi bisnis Anda diterjemahkan dengan tepat ke dalam produk digital.', 'We explain technical solutions in plain language, making sure your business vision is translated accurately into a digital product.'],
-    ['Komitmen Lini Masa', 'Timeline Commitment'], ['Pengembangan sistem yang terencana dengan estimasi waktu yang jujur (On-Time Delivery). Kami sangat menghargai momentum bisnis Anda.', 'Planned development with honest time estimates (On-Time Delivery). We deeply respect your business momentum.'],
-    ['Standar SEO & Kecepatan', 'SEO & Speed Standards'], ['Setiap baris kode dioptimasi untuk kecepatan muat maksimal dan struktur SEO teknis yang disukai Google, meningkatkan visibilitas organik bisnis Anda.', 'Every line of code is optimized for maximum load speed and technical SEO structure that Google favors, boosting your organic visibility.'],
-    ['Skalabilitas & Keamanan', 'Scalability & Security'], ['Sistem dibangun dengan fondasi teknologi modern yang siap berkembang seiring pertumbuhan bisnis Anda, lengkap dengan lapisan keamanan berlapis.', 'Built on a modern technology foundation that grows with your business, complete with layered security.'],
     /* process */
     ['Cara Kerja', 'How We Work'], ['Alur kerja yang jelas,', 'A clear workflow,'], ['di setiap tahap.', 'at every stage.'],
     ['Diskusi santai memahami kebutuhan dan gambaran website Anda.', 'A relaxed discussion to understand your needs and website vision.'],
@@ -117,7 +111,7 @@
     ['Alamat', 'Address'], ['Jam Operasional', 'Operating Hours'], ['Setiap Hari (24 Jam)', 'Every Day (24 Hours)'],
     ['Nama', 'Name'], ['Perusahaan / Instansi', 'Company / Organization'], ['Nomor WhatsApp', 'WhatsApp Number'], ['Jenis Website', 'Website Type'],
     ['Pesan', 'Message'], ['Kirim Pesan', 'Send Message'], ['Lokasi', 'Location'],
-    ['Pilih jenis website', 'Choose website type'], ['Website Instansi', 'Institutional Website'],
+    ['Pilih jenis website', 'Choose website type'],
     ['Nama lengkap', 'Full name'], ['Opsional', 'Optional'], ['Ceritakan kebutuhan website Anda...', 'Tell us about your website needs...'],
     /* footer & widget */
     ['Jasa pembuatan website dan web apps profesional, dari landing page sampai sistem yang lebih kompleks.', 'Professional website and web app development, from landing pages to more complex systems.'],
@@ -222,52 +216,7 @@
   }
   window.openPfModal = function (p) { baseOpen(p); currentProject = p; fillModal(); };
 
-  /* Tombol bahasa */
-  const style = document.createElement('style');
-  style.textContent = `
-    /* ── Navbar: rapikan desktop & mobile ── */
-    .nav-inner{padding:1rem .75rem;gap:.75rem}
-    .nav-logo{white-space:nowrap;flex-shrink:0}
-    .nav-links{gap:1.6rem}
-    .nav-links a{white-space:nowrap}
-    .nav-cta{padding:.6rem 1.15rem}
-    .lang-switch{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:2px;background:var(--bg-soft);margin-left:.5rem;flex-shrink:0}
-    .lang-switch button{background:none;border:none;color:var(--ink-soft);font:700 .7rem var(--f-body);letter-spacing:.06em;padding:.3rem .6rem;border-radius:999px;cursor:pointer;transition:.2s}
-    .lang-switch button.active{background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#fff}
-    .theme-toggle{margin-left:0}
-    @media (max-width:1100px){
-      .nav-logo{font-size:1.05rem}
-      .nav-links{gap:1.2rem}
-      .nav-links a{font-size:.84rem}
-    }
-    /* menu drawer mulai dari 992px supaya tidak sesak di layar sedang */
-    @media (max-width:992px){
-      .nav-inner{justify-content:space-between;padding:.85rem 1rem;gap:.6rem}
-      .nav-links{position:fixed;top:0;right:0;width:300px;max-width:82vw;height:100vh;background:var(--bg);flex-direction:column;align-items:flex-start;gap:0;transform:translateX(100%);transition:transform .3s ease,background .3s;z-index:310;padding-top:5.5rem;box-shadow:-10px 0 40px rgba(10,24,58,.15);margin-left:0}
-      .nav-links.open{transform:translateX(0)}
-      .nav-links li{width:100%;border-bottom:1px solid var(--line)}
-      .nav-links a{display:block;padding:1rem 1.5rem;width:100%;font-size:.9rem}
-      .nav-links a::after{display:none}
-      .nav-links a.nav-cta{margin:1rem 1.5rem;width:calc(100% - 3rem);text-align:center}
-      .hamburger{display:flex;padding:4px;margin-right:-4px}
-      .lang-switch{margin-left:auto}
-    }
-    @media (max-width:480px){
-      .nav-inner{padding:.75rem .9rem;gap:.45rem}
-      .nav-logo{font-size:.95rem;gap:.4rem}
-      .lang-switch button{padding:.26rem .5rem;font-size:.66rem}
-      .theme-toggle{width:34px;height:34px;font-size:.82rem}
-    }
-    @media (max-width:380px){
-      .nav-inner{padding:.7rem .75rem;gap:.35rem}
-      .nav-logo{font-size:.84rem}
-      .logo-mark{font-size:.72rem;padding:.12rem .32rem}
-      .lang-switch button{padding:.24rem .42rem}
-      .theme-toggle{width:30px;height:30px}
-    }
-    @media (max-width:340px){ .logo-mark{display:none} }`;
-  document.head.appendChild(style);
-
+  /* Tombol bahasa (gaya tombol ada di main.css) */
   const sw = document.createElement('div');
   sw.className = 'lang-switch';
   sw.innerHTML = '<button type="button" data-lang="id">ID</button><button type="button" data-lang="en">EN</button>';
@@ -286,8 +235,6 @@
     document.querySelectorAll('.faq-item.open .faq-a').forEach(a => { a.style.maxHeight = a.scrollHeight + 'px'; });
     sw.querySelectorAll('button').forEach(b => b.classList.toggle('active', b.dataset.lang === l));
   }
-
-  window.addEventListener('resize', () => { if (window.innerWidth > 992 && typeof closeNav === 'function') closeNav(); });
 
   setLang(lang);
 })();

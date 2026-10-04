@@ -1,9 +1,9 @@
 /* =========================================================
    DARK MODE TOGGLE
    (Tema awal sudah diterapkan lebih dulu lewat inline script
-   di <head> index.html agar tidak ada flash warna terang
-   sebelum CSS/JS ini dimuat. Blok ini hanya menangani klik
-   tombol toggle dan menyimpan preferensi pengguna.)
+   di <head> index.html agar tidak ada flash warna terang.
+   Blok ini hanya menangani klik tombol toggle dan menyimpan
+   preferensi pengguna.)
    ========================================================= */
 const themeToggleBtn = document.getElementById('theme-toggle');
 if (themeToggleBtn) {
@@ -87,13 +87,13 @@ const testimonials = [
 /* =========================================================
    DOM REFERENCES
    ========================================================= */
-const navbar      = document.getElementById('navbar');
+const navbar       = document.getElementById('navbar');
 const hamburger    = document.getElementById('hamburger');
 const navLinks     = document.getElementById('nav-links');
 const scrollTopBtn = document.getElementById('scroll-top');
 
 /* =========================================================
-   MOBILE NAV (overlay + toggle — click listener attached here)
+   MOBILE NAV (overlay + toggle)
    ========================================================= */
 const navOverlay = document.createElement('div');
 navOverlay.id = 'nav-overlay';
@@ -121,7 +121,7 @@ hamburger.addEventListener('click', toggleNav);
 navOverlay.addEventListener('click', closeNav);
 navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
-window.addEventListener('resize', () => { if (window.innerWidth > 768) closeNav(); });
+window.addEventListener('resize', () => { if (window.innerWidth > 992) closeNav(); });
 
 /* =========================================================
    SCROLL REVEAL
@@ -135,9 +135,7 @@ const revealObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-/* =========================================================
-   FIX: fallback untuk elemen 
-   ========================================================= */
+/* Fallback: elemen .reveal yang terlewat observer tetap ditampilkan */
 function revealFallbackSweep() {
   document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
     const rect = el.getBoundingClientRect();
@@ -147,11 +145,8 @@ function revealFallbackSweep() {
     }
   });
 }
-// Sapuan awal setelah render pertama selesai
 setTimeout(revealFallbackSweep, 1500);
-// Sapuan tambahan tiap kali user scroll (murah, hanya baca posisi)
 window.addEventListener('scroll', revealFallbackSweep, { passive: true });
-// Sapuan saat orientasi/ukuran layar berubah (rotate HP, dsb.)
 window.addEventListener('resize', revealFallbackSweep);
 
 /* =========================================================
@@ -181,11 +176,8 @@ if (grid) {
 }
 
 /* =========================================================
-   PORTFOLIO GALLERY MODAL (FIXED)
-   - Referensi ke #pf-modal-github DIHAPUS karena elemen itu
-     sudah tidak ada di HTML (dulu bikin fungsi ini error dan
-     modal gagal terbuka sebagaimana mestinya).
-   - Klik foto pada galeri sekarang membuka LIGHTBOX full layar.
+   PORTFOLIO GALLERY MODAL + LIGHTBOX
+   - Klik foto pada galeri membuka lightbox full layar.
    ========================================================= */
 const pfModal   = document.getElementById('pf-modal');
 const pfGallery = document.getElementById('pf-modal-gallery');
@@ -294,80 +286,54 @@ const counterObserver = new IntersectionObserver(entries => {
 counters.forEach(el => counterObserver.observe(el));
 
 /* =========================================================
-   HERO CODE-CARD TYPING ANIMATION
-   ========================================================= */
-const typeEl = document.querySelector('.type-line');
-if (typeEl) {
-  const words = ['building...', 'testing...', 'online'];
-  let wi = 0, ci = 0, deleting = false;
-  function typeTick() {
-    const word = words[wi];
-    typeEl.textContent = deleting ? word.slice(0, ci--) : word.slice(0, ci++);
-    if (!deleting && ci === word.length + 1) { deleting = true; setTimeout(typeTick, 1100); return; }
-    if (deleting && ci === 0) { deleting = false; wi = (wi + 1) % words.length; }
-    setTimeout(typeTick, deleting ? 45 : 90);
-  }
-  typeTick();
-}
-
-/* =========================================================
-   TESTIMONIAL AUTO-SLIDING CAROUSEL
+   TESTIMONIAL MARQUEE (jalan terus, tanpa titik)
    ========================================================= */
 const testiTrack = document.getElementById('testi-track');
-const testiDots = document.getElementById('testi-dots');
-if (testiTrack && testiDots) {
-  testimonials.forEach(t => {
+if (testiTrack) {
+  const marquee = document.createElement('div');
+  marquee.className = 'testi-marquee';
+
+  const buildCard = (t, isClone) => {
     const card = document.createElement('div');
     card.className = 'testi-card';
+    if (isClone) card.setAttribute('aria-hidden', 'true');
     card.innerHTML = `
       <i class="fas fa-quote-left"></i>
       <p>${t.text}</p>
       <div class="testi-who"><strong>${t.name}</strong><span>${t.role}</span></div>`;
-    testiTrack.appendChild(card);
-  });
+    return card;
+  };
 
-  const cards = testiTrack.querySelectorAll('.testi-card');
-  cards.forEach((_, i) => {
-    const dot = document.createElement('span');
-    if (i === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => goToTesti(i, true));
-    testiDots.appendChild(dot);
-  });
-  const dotEls = testiDots.querySelectorAll('span');
+  // dua set kartu agar putaran tidak terlihat putus
+  testimonials.forEach(t => marquee.appendChild(buildCard(t, false)));
+  testimonials.forEach(t => marquee.appendChild(buildCard(t, true)));
+  testiTrack.appendChild(marquee);
 
-  let testiIndex = 0;
-  let testiPaused = false;
+  // Gerak via JavaScript (requestAnimationFrame) agar tetap jalan
+  // walau pengguna mengaktifkan "kurangi animasi" di sistemnya.
+  const SPEED = 50; // px per detik, ubah sesuai selera
+  let pos = 0, last = performance.now(), paused = false, resumeTimer;
 
-  function goToTesti(i, userAction) {
-    testiIndex = (i + cards.length) % cards.length;
-    const target = cards[testiIndex];
-    const trackRect = testiTrack.getBoundingClientRect();
-    const targetRect = target.getBoundingClientRect();
-    const delta = targetRect.left - trackRect.left;
-    testiTrack.scrollTo({ left: testiTrack.scrollLeft + delta, behavior: 'smooth' });
-    dotEls.forEach(d => d.classList.remove('active'));
-    dotEls[testiIndex].classList.add('active');
-    if (userAction) { testiPaused = true; setTimeout(() => testiPaused = false, 6000); }
+  const pause  = () => { paused = true; clearTimeout(resumeTimer); };
+  const resume = (delay = 0) => { clearTimeout(resumeTimer); resumeTimer = setTimeout(() => { paused = false; }, delay); };
+
+  testiTrack.addEventListener('mouseenter', pause);
+  testiTrack.addEventListener('mouseleave', () => resume(0));
+  testiTrack.addEventListener('touchstart', pause, { passive: true });
+  testiTrack.addEventListener('touchend', () => resume(1500), { passive: true });
+
+  function step(now) {
+    const dt = Math.min((now - last) / 1000, 0.1);
+    last = now;
+    if (!paused) {
+      const half = marquee.scrollWidth / 2;
+      pos += SPEED * dt;
+      if (pos >= half) pos -= half;
+      marquee.style.transform = `translateX(${-pos}px)`;
+    }
+    requestAnimationFrame(step);
   }
-
-  // keep dots in sync when user drags/scrolls the track manually
-  const testiObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      const idx = [...cards].indexOf(entry.target);
-      if (entry.isIntersecting && idx > -1) {
-        testiIndex = idx;
-        dotEls.forEach(d => d.classList.remove('active'));
-        dotEls[idx].classList.add('active');
-      }
-    });
-  }, { root: testiTrack, threshold: 0.6 });
-  cards.forEach(c => testiObserver.observe(c));
-
-  testiTrack.addEventListener('mouseenter', () => testiPaused = true);
-  testiTrack.addEventListener('mouseleave', () => testiPaused = false);
-  testiTrack.addEventListener('touchstart', () => testiPaused = true, { passive: true });
-
-  setInterval(() => { if (!testiPaused) goToTesti(testiIndex + 1, false); }, 3500);
+  requestAnimationFrame(step);
 }
 
 /* =========================================================
@@ -395,9 +361,8 @@ document.querySelectorAll('.faq-item').forEach(item => {
 });
 
 /* =========================================================
-   WHATSAPP FLOATING WIDGET (FIXED)
-   - Bubble HANYA muncul saat ikon WhatsApp diklik.
-   - Auto-popup setelah 3 detik sudah DIHAPUS.
+   WHATSAPP FLOATING WIDGET
+   - Bubble hanya muncul saat ikon WhatsApp diklik.
    ========================================================= */
 const waFloat = document.getElementById('wa-float');
 const waBubble = document.getElementById('wa-bubble');
