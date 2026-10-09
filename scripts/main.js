@@ -21,49 +21,104 @@ if (themeToggleBtn) {
 }
 
 /* =========================================================
-   PROYEK
+   PROYEK PORTOFOLIO
+   - name   : nama aplikasi (singkatan / brand), tampil sebagai judul card
+   - sub    : jenis aplikasi / metode, tampil di bawah nama
+   - folder : folder gambar di /images, cover : nomor gambar untuk thumbnail
+   - Terjemahan English ada di scripts/i18n.js (objek P), cocokkan lewat id
    ========================================================= */
-const featuredProjects = [
-  { id: 39, title: 'Aplikasi Inventory (ROP & Safety Stock)', stack: ['Laravel 12','MySQL','Bootstrap'], img: 'images/39.rrfactory/1.PNG', github: 'https://github.com/khoirulanam5/sistem-inventory-rop-safety-stock.git', desc: 'Sistem informasi inventory berbasis web yang mengotomatisasi pencatatan barang masuk dan keluar serta stok bahan baku secara real-time, menerapkan metode Reorder Point (ROP) dan Safety Stock untuk menentukan waktu pemesanan ulang yang tepat guna mencegah kehabisan bahan baku.', images: Array.from({ length: 10 }, (_, i) => `images/39.rrfactory/${i + 1}.PNG`) },
-  { id: 38, title: 'Aplikasi Monitoring Kios Pasar Berbasis Lokasi (SAW)', stack: ['Laravel 12','MySQL','Bootstrap'], img: 'images/38.saw-kios/3.PNG', github: 'https://github.com/khoirulanam5/monitoring-kios-pasar-saw.git', desc: 'Sistem informasi monitoring kios pasar tradisional berbasis lokasi yang menyajikan status dan tingkat okupansi kios secara real-time, dilengkapi metode Simple Additive Weighting (SAW) untuk menentukan prioritas penanganan kios kosong berdasarkan aksesibilitas, lokasi, biaya sewa, dan okupansi.', images: Array.from({ length: 10 }, (_, i) => `images/38.saw-kios/${i + 1}.PNG`) },
-  { id: 37, title: 'Aplikasi Rekomendasi Kustomisasi Furniture (Fuzzy & Knapsack)', stack: ['Laravel 12','MySQL','Bootstrap'], img: 'images/37.ristianjaya/7.PNG', github: 'https://github.com/khoirulanam5/sistem-rekomendasi-furniture-fuzzy-knapsack.git', desc: 'Sistem rekomendasi kustomisasi furniture menggunakan metode Fuzzy Logic Mamdani untuk menilai kecocokan dimensi dan harga, serta algoritma Knapsack untuk memilih kombinasi furniture terbaik sesuai luas ruangan dan anggaran, dilengkapi visualisasi tata letak 3D.', images: Array.from({ length: 10 }, (_, i) => `images/37.ristianjaya/${i + 1}.PNG`) },
-  { id: 36, title: 'Aplikasi SPK Prioritas Restok Barang (SAW)', stack: ['CodeIgniter 4','MySQL','Bootstrap'], img: 'images/36.saw-stock/1.PNG', github: 'https://github.com/khoirulanam5/spk-restok-saw-tokobangunan.git', desc: 'Sistem Pendukung Keputusan penentuan prioritas restok barang menggunakan metode Simple Additive Weighting (SAW) berdasarkan kriteria jumlah stok, tingkat penjualan, harga, lead time, dan tingkat permintaan, guna membantu toko bangunan mengontrol persediaan secara lebih objektif.', images: Array.from({ length: 10 }, (_, i) => `images/36.saw-stock/${i + 1}.PNG`) },
-  { id: 35, title: 'Aplikasi SPK Pemilihan Smartphone Terbaik', stack: ['Laravel 12','MySQL','Bootstrap'], img: 'images/35.spk-maut/2.PNG', github: 'https://github.com/khoirulanam5/spk-maut.git', desc: 'Sistem Pendukung Keputusan pemilihan smartphone terbaik menggunakan metode Multi Attribute Utility Theory (MAUT) dengan multi-role (Owner, Admin, Customer), menghasilkan perangkingan smartphone berdasarkan kriteria dan bobot yang ditentukan.', images: Array.from({ length: 10 }, (_, i) => `images/35.spk-maut/${i + 1}.PNG`) },
-  { id: 34, title: 'Aplikasi Restourant', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/34.resto/1.PNG', github: 'https://github.com/khoirulanam5/sim-resto.git', desc: 'Sistem informasi manajemen restoran berbasis web yang mengelola alur pemesanan dari kasir ke dapur, pencatatan transaksi penjualan, serta manajemen stok bahan baku menggunakan metode First In First Out (FIFO) untuk mengurangi risiko bahan baku kedaluwarsa.', images: Array.from({ length: 10 }, (_, i) => `images/34.resto/${i + 1}.PNG`) },
-  { id: 33, title: 'Aplikasi Rekomendasi Kamar Hotel', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/33.fpgrowth/1.PNG', github: 'https://github.com/khoirulanam5/Hotel-Room-Facility-Recommendation-System-with-Apriori-and-FP-Growth.git', desc: 'Sistem rekomendasi fasilitas kamar hotel menggunakan algoritma Apriori dan FP-Growth untuk menemukan pola asosiasi dari data transaksi tamu secara efisien.', images: Array.from({ length: 10 }, (_, i) => `images/33.fpgrowth/${i + 1}.PNG`) },
-  { id: 32, title: 'Aplikasi Manajemen Kasir', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/32.kasir/8.PNG', github: 'https://github.com/khoirulanam5/kasir.git', desc: 'Aplikasi kasir berbasis web untuk manajemen transaksi penjualan, stok produk, laporan harian, dan pengelolaan data pelanggan secara real-time.', images: Array.from({ length: 10 }, (_, i) => `images/32.kasir/${i + 1}.PNG`) },
-  { id: 31, title: 'Aplikasi Bantuan Alat Pertanian', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/31.sipbap/1.PNG', github: 'https://github.com/khoirulanam5/sipbap.git', desc: 'Sistem informasi pengajuan dan pengelolaan bantuan alat pertanian untuk memfasilitasi proses administrasi antara petani dan dinas terkait.', images: Array.from({ length: 10 }, (_, i) => `images/31.sipbap/${i + 1}.PNG`) },
-  { id: 30, title: 'Aplikasi Bimbingan Konseling', stack: ['Laravel 12','MySQL','Bootstrap'], img: 'images/30.bk/1.PNG', github: 'https://github.com/khoirulanam5/bimbingan-konseling.git', desc: 'Sistem manajemen bimbingan konseling siswa yang memfasilitasi pencatatan sesi konseling, laporan perkembangan, dan komunikasi antara guru BK dan siswa.', images: Array.from({ length: 10 }, (_, i) => `images/30.bk/${i + 1}.PNG`) },
-  { id: 29, title: 'Aplikasi Berita Acara', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/29.bap/1.PNG', github: 'https://github.com/khoirulanam5/bap-imigrasi.git', desc: 'Sistem pengelolaan berita acara pemeriksaan digital untuk kantor imigrasi, dilengkapi fitur tanda tangan digital dan arsip dokumen.', images: Array.from({ length: 10 }, (_, i) => `images/29.bap/${i + 1}.PNG`) },
-  { id: 28, title: 'Aplikasi Pelayanan WNA', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/28.pelayanan/1.PNG', github: 'https://github.com/khoirulanam5/pelayanan.git', desc: 'Sistem pelayanan warga negara asing berbasis web untuk mempermudah proses administrasi, pendataan, dan monitoring status permohonan izin.', images: Array.from({ length: 10 }, (_, i) => `images/28.pelayanan/${i + 1}.PNG`) },
-  { id: 27, title: 'Aplikasi Pengajuan UMKM', stack: ['PHP','MySQL','Bootstrap'], img: 'images/27.umkm/1.PNG', github: 'https://github.com/khoirulanam5/umkm.git', desc: 'Sistem pengajuan dan verifikasi UMKM online untuk memudahkan proses registrasi, validasi data usaha, dan pelaporan kepada dinas terkait.', images: Array.from({ length: 10 }, (_, i) => `images/27.umkm/${i + 1}.PNG`) },
-  { id: 26, title: 'Aplikasi Warehouse Inventori', stack: ['Laravel 12','MySQL','Bootstrap'], img: 'images/26.warehouse/1.PNG', github: 'https://github.com/khoirulanam5/warehouse.git', desc: 'Sistem manajemen gudang komprehensif dengan fitur pencatatan stok, penerimaan dan pengeluaran barang, serta laporan inventory secara periodik.', images: Array.from({ length: 10 }, (_, i) => `images/26.warehouse/${i + 1}.PNG`) },
-  { id: 25, title: 'Aplikasi Pengadaan Barang', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/25.pengadaan/2.PNG', github: 'https://github.com/khoirulanam5/pengadaan-barang.git', desc: 'Sistem pengadaan barang yang mengotomatisasi proses permintaan, persetujuan, pembelian, dan penerimaan barang dalam satu platform terintegrasi.', images: Array.from({ length: 10 }, (_, i) => `images/25.pengadaan/${i + 1}.PNG`) },
-  { id: 24, title: 'Aplikasi E-Perpustakaan', stack: ['CodeIgniter 4','MySQL','Bootstrap'], img: 'images/24.perpus-qr/9.PNG', github: 'https://github.com/khoirulanam5/perpus-qr.git', desc: 'Perpustakaan digital dengan fitur QR code untuk peminjaman buku, pencarian koleksi, manajemen anggota, dan notifikasi pengembalian otomatis.', images: Array.from({ length: 10 }, (_, i) => `images/24.perpus-qr/${i + 1}.PNG`) },
-  { id: 23, title: 'Aplikasi Order Makanan', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/23.ma/1.PNG', github: 'https://github.com/khoirulanam5/menu-ordering.git', desc: 'Sistem pemesanan makanan berbasis web dengan tampilan menu interaktif, keranjang belanja, manajemen meja, dan dapur order real-time.', images: Array.from({ length: 10 }, (_, i) => `images/23.ma/${i + 1}.PNG`) },
-  { id: 22, title: 'Aplikasi Stok Obat', stack: ['PHP','MySQL','Bootstrap'], img: 'images/22.stock-obat/2.PNG', github: 'https://github.com/khoirulanam5/stock-obat.git', desc: 'Sistem manajemen stok obat apotek dengan fitur notifikasi stok menipis, expired date monitoring, dan laporan penggunaan obat bulanan.', images: Array.from({ length: 10 }, (_, i) => `images/22.stock-obat/${i + 1}.PNG`) },
-  { id: 21, title: 'Aplikasi Inventori Toko Ban Motor', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/21.inventori-ban/5.PNG', github: 'https://github.com/khoirulanam5/inventori-toko-ban.git', desc: 'Sistem inventori khusus toko ban motor dengan manajemen stok berdasarkan ukuran, merk, dan tipe ban, serta laporan penjualan harian.', images: Array.from({ length: 10 }, (_, i) => `images/21.inventori-ban/${i + 1}.PNG`) },
-  { id: 20, title: 'Aplikasi Seleksi Siswa Berprestasi', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/20.profile-match/9.PNG', github: 'https://github.com/khoirulanam5/profile-match.git', desc: 'Sistem pendukung keputusan seleksi siswa berprestasi menggunakan metode Profile Matching dengan kriteria akademik dan non-akademik terukur.', images: Array.from({ length: 10 }, (_, i) => `images/20.profile-match/${i + 1}.PNG`) },
-  { id: 19, title: 'Aplikasi Rekam Medis', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/19.rm/8.PNG', github: 'https://github.com/khoirulanam5/rekam-medis.git', desc: 'Sistem rekam medis elektronik untuk klinik dan puskesmas dengan fitur riwayat kunjungan, resep digital, dan laporan statistik kesehatan.', images: Array.from({ length: 10 }, (_, i) => `images/19.rm/${i + 1}.PNG`) },
-  { id: 18, title: 'Aplikasi Menentukan Siswa Terbaik', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/18.topsis/6.PNG', github: 'https://github.com/khoirulanam5/topsis.git', desc: 'Sistem pendukung keputusan penentuan siswa terbaik menggunakan metode TOPSIS dengan bobot kriteria yang dapat dikonfigurasi oleh admin.', images: Array.from({ length: 10 }, (_, i) => `images/18.topsis/${i + 1}.PNG`) },
-  { id: 17, title: 'Aplikasi Manajemen Terminal', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/17.terminal/2.PNG', github: 'https://github.com/khoirulanam5/manajemen-terminal.git', desc: 'Sistem manajemen terminal bus untuk pencatatan kedatangan/keberangkatan, data penumpang, retribusi, dan laporan operasional terminal.', images: Array.from({ length: 10 }, (_, i) => `images/17.terminal/${i + 1}.PNG`) },
-  { id: 16, title: 'Aplikasi Manajemen Catering', stack: ['PHP','MySQL','Bootstrap'], img: 'images/16.catering/1.PNG', github: 'https://github.com/khoirulanam5/manajemen-pemesanan-catering.git', desc: 'Sistem pemesanan dan manajemen catering dengan fitur menu planner, jadwal pengiriman, invoice otomatis, dan manajemen bahan baku.', images: Array.from({ length: 10 }, (_, i) => `images/16.catering/${i + 1}.PNG`) },
-  { id: 15, title: 'Aplikasi Rental Mobil', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/15.rental/4.PNG', github: 'https://github.com/khoirulanam5/rental-mobil.git', desc: 'Sistem rental mobil lengkap dengan manajemen armada, booking online, kalkulasi biaya otomatis, dan laporan pendapatan periodik.', images: Array.from({ length: 10 }, (_, i) => `images/15.rental/${i + 1}.PNG`) },
-  { id: 14, title: 'Aplikasi Manajemen Klinik', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/14.siluka/5.PNG', github: 'https://github.com/khoirulanam5/siluka.git', desc: 'Sistem informasi klinik terintegrasi mencakup pendaftaran pasien, antrian dokter, rekam medis, apotek, dan billing pasien secara digital.', images: Array.from({ length: 10 }, (_, i) => `images/14.siluka/${i + 1}.PNG`) },
-  { id: 13, title: 'Aplikasi Penjualan Aquarium', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/13.aquarium/8.PNG', github: 'https://github.com/khoirulanam5/penjualan-aquarium.git', desc: 'Toko online aquarium dengan katalog produk, manajemen pesanan, stok ikan dan perlengkapan, serta laporan penjualan terintegrasi.', images: Array.from({ length: 10 }, (_, i) => `images/13.aquarium/${i + 1}.PNG`) },
-  { id: 12, title: 'Aplikasi Monitoring Data Stunting', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/12.stunting/9.PNG', github: 'https://github.com/khoirulanam5/sistem-monitoring-stunting.git', desc: 'Sistem monitoring pertumbuhan balita berbasis web untuk deteksi dini stunting dengan grafik perkembangan, alert risiko, dan laporan posyandu.', images: Array.from({ length: 10 }, (_, i) => `images/12.stunting/${i + 1}.PNG`) },
-  { id: 11, title: 'Aplikasi Inventaris', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/11.inventaris/1.PNG', github: 'https://github.com/khoirulanam5/inventaris-barang-non-medis-rs.git', desc: 'Sistem inventaris barang non-medis rumah sakit dengan fitur QR code aset, mutasi barang antar departemen, dan laporan kondisi aset.', images: Array.from({ length: 10 }, (_, i) => `images/11.inventaris/${i + 1}.PNG`) },
-  { id: 10, title: 'Aplikasi KPI Karyawan', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/10.kpikinerja/10.PNG', github: 'https://github.com/khoirulanam5/kpi-kinerja.git', desc: 'Sistem evaluasi KPI karyawan dengan indikator kinerja yang dapat dikustomisasi, dashboard performa, dan laporan penilaian per periode.', images: Array.from({ length: 10 }, (_, i) => `images/10.kpikinerja/${i + 1}.PNG`) },
-  { id: 9, title: 'Aplikasi Maintenance Kendaraan', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/9.maintenance/6.PNG', github: 'https://github.com/khoirulanam5/Emaintenance.git', desc: 'Sistem manajemen perawatan kendaraan operasional dengan jadwal servis, riwayat perbaikan, biaya maintenance, dan alert jadwal rutin.', images: Array.from({ length: 10 }, (_, i) => `images/9.maintenance/${i + 1}.PNG`) },
-  { id: 8, title: 'Aplikasi Persuratan', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/8.surat/4.PNG', github: 'https://github.com/khoirulanam5/persuratan.git', desc: 'Sistem persuratan digital untuk instansi pemerintah dan swasta dengan fitur surat masuk/keluar, disposisi, dan arsip dokumen terstruktur.', images: Array.from({ length: 10 }, (_, i) => `images/8.surat/${i + 1}.PNG`) },
-  { id: 7, title: 'Aplikasi Presensi', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/7.presensi/1.PNG', github: 'https://github.com/khoirulanam5/presensi.git', desc: 'Sistem absensi karyawan berbasis web dengan integrasi QR code, rekap kehadiran otomatis, izin/cuti online, dan laporan bulanan.', images: Array.from({ length: 10 }, (_, i) => `images/7.presensi/${i + 1}.PNG`) },
-  { id: 6, title: 'Aplikasi Inventori', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/6.inventori/2.PNG', github: 'https://github.com/khoirulanam5/inventori.git', desc: 'Sistem manajemen inventori barang umum dengan pencatatan keluar-masuk, stok minimum alert, laporan persediaan, dan manajemen supplier.', images: Array.from({ length: 10 }, (_, i) => `images/6.inventori/${i + 1}.PNG`) },
-  { id: 5, title: 'Aplikasi Penjualan Hijab', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/5.tasbiha/1.PNG', github: 'https://github.com/khoirulanam5/penjualan_hijab.git', desc: 'Toko online busana muslim dengan katalog produk, keranjang belanja, manajemen pesanan dan pengiriman, serta laporan penjualan.', images: Array.from({ length: 10 }, (_, i) => `images/5.tasbiha/${i + 1}.PNG`) },
-  { id: 4, title: 'Aplikasi Penjualan Sparepart', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/4.sparepart/5.PNG', github: 'https://github.com/khoirulanam5/penjualan_sparepart.git', desc: 'Sistem penjualan sparepart kendaraan dengan manajemen stok per kategori, pencarian cepat, transaksi kasir, dan laporan stok harian.', images: Array.from({ length: 10 }, (_, i) => `images/4.sparepart/${i + 1}.PNG`) },
-  { id: 3, title: 'Inventori Bahan Baku Roti', stack: ['PHP','MySQL','Bootstrap'], img: 'images/3.roti/1.PNG', github: 'https://github.com/khoirulanam5/inventori-bahan-roti-fifo.git', desc: 'Sistem inventori bahan baku roti dengan metode FIFO untuk memastikan bahan terlama digunakan lebih dulu, dilengkapi alert kadaluarsa.', images: Array.from({ length: 10 }, (_, i) => `images/3.roti/${i + 1}.PNG`) },
-  { id: 2, title: 'Aplikasi E-Tiket & Penyewaan Bus', stack: ['CodeIgniter 3','MySQL','Bootstrap'], img: 'images/2.bus/6.PNG', github: 'https://github.com/khoirulanam5/E-Tiket.git', desc: 'Platform pemesanan tiket dan penyewaan bus online dengan fitur pemilihan kursi interaktif, pembayaran digital, dan manajemen armada.', images: Array.from({ length: 10 }, (_, i) => `images/2.bus/${i + 1}.PNG`) },
-  { id: 1, title: 'Aplikasi Pengajuan Cuti Pegawai', stack: ['PHP','MySQL','Bootstrap'], img: 'images/1.cuti/1.PNG', github: 'https://github.com/khoirulanam5/Sistem-Pengajuan-Cuti-Pegawai-Berbasis-Web.git', desc: 'Sistem pengajuan cuti pegawai digital dengan alur persetujuan multi-level, kalender cuti tim, saldo cuti otomatis, dan notifikasi status.', images: Array.from({ length: 10 }, (_, i) => `images/1.cuti/${i + 1}.PNG`) }
+const GH = 'https://github.com/khoirulanam5/';
+
+const rawProjects = [
+  { id: 39, name: 'InvenROP', sub: 'Inventory Bahan Baku · ROP & Safety Stock', folder: '39.rrfactory', cover: 1, repo: 'sistem-inventory-rop-safety-stock.git',
+    desc: 'Aplikasi inventory berbasis web untuk mencatat barang masuk, barang keluar, dan stok bahan baku secara real-time. Memakai metode Reorder Point (ROP) dan Safety Stock agar sistem memberi tahu kapan bahan baku harus dipesan ulang, sehingga stok tidak kehabisan.' },
+  { id: 38, name: 'SIMKIOS', sub: 'Monitoring Kios Pasar · Metode SAW', folder: '38.saw-kios', cover: 3, repo: 'monitoring-kios-pasar-saw.git',
+    desc: 'Aplikasi monitoring kios pasar tradisional berbasis lokasi yang menampilkan status dan tingkat okupansi setiap kios secara real-time. Metode Simple Additive Weighting (SAW) dipakai untuk menentukan prioritas penanganan kios kosong berdasarkan aksesibilitas, lokasi, biaya sewa, dan okupansi.' },
+  { id: 37, name: 'FurniFit', sub: 'Rekomendasi Furniture · Fuzzy & Knapsack', folder: '37.ristianjaya', cover: 7, repo: 'sistem-rekomendasi-furniture-fuzzy-knapsack.git',
+    desc: 'Aplikasi rekomendasi kustomisasi furniture. Fuzzy Logic Mamdani menilai kecocokan dimensi dan harga, lalu algoritma Knapsack memilih kombinasi furniture terbaik sesuai luas ruangan dan anggaran. Hasilnya ditampilkan dalam visualisasi tata letak 3D.' },
+  { id: 36, name: 'SPK-Restok', sub: 'Prioritas Restok Barang · Metode SAW', folder: '36.saw-stock', cover: 1, repo: 'spk-restok-saw-tokobangunan.git',
+    desc: 'Sistem Pendukung Keputusan untuk toko bangunan dalam menentukan barang mana yang harus direstok lebih dulu. Metode SAW menilai jumlah stok, tingkat penjualan, harga, lead time, dan tingkat permintaan, sehingga pengendalian persediaan lebih objektif.' },
+  { id: 35, name: 'PhoneRank', sub: 'SPK Smartphone Terbaik · Metode MAUT', folder: '35.spk-maut', cover: 2, repo: 'spk-maut.git',
+    desc: 'Sistem Pendukung Keputusan untuk memilih smartphone terbaik dengan metode Multi Attribute Utility Theory (MAUT). Tersedia tiga peran pengguna (Owner, Admin, Customer), dan sistem menghasilkan perangkingan smartphone berdasarkan kriteria serta bobot yang ditentukan.' },
+  { id: 34, name: 'SIM-Resto', sub: 'Manajemen Restoran · Stok FIFO', folder: '34.resto', cover: 1, repo: 'sim-resto.git',
+    desc: 'Sistem informasi manajemen restoran yang mengelola alur pesanan dari kasir ke dapur dan mencatat transaksi penjualan. Stok bahan baku dikelola dengan metode First In First Out (FIFO) untuk mengurangi risiko bahan baku kedaluwarsa.' },
+  { id: 33, name: 'HotelRec', sub: 'Rekomendasi Fasilitas Kamar · Apriori & FP-Growth', folder: '33.fpgrowth', cover: 1, repo: 'Hotel-Room-Facility-Recommendation-System-with-Apriori-and-FP-Growth.git',
+    desc: 'Sistem rekomendasi fasilitas kamar hotel. Algoritma Apriori dan FP-Growth menggali pola asosiasi dari data transaksi tamu, sehingga pihak hotel tahu kombinasi fasilitas yang paling sering dipilih.' },
+  { id: 32, name: 'SIKASIR', sub: 'Aplikasi Kasir & Penjualan', folder: '32.kasir', cover: 8, repo: 'kasir.git',
+    desc: 'Aplikasi kasir berbasis web untuk mengelola transaksi penjualan, stok produk, dan data pelanggan, dengan laporan harian yang diperbarui secara real-time.' },
+  { id: 31, name: 'SIPBAP', sub: 'Pengelolaan Bantuan Alat Pertanian', folder: '31.sipbap', cover: 1, repo: 'sipbap.git',
+    desc: 'Sistem informasi untuk pengajuan dan pengelolaan bantuan alat pertanian. Memudahkan proses administrasi antara petani dan dinas terkait.' },
+  { id: 30, name: 'SIBK', sub: 'Bimbingan Konseling Siswa', folder: '30.bk', cover: 1, repo: 'bimbingan-konseling.git',
+    desc: 'Sistem manajemen bimbingan konseling sekolah untuk mencatat sesi konseling, menyusun laporan perkembangan siswa, dan memfasilitasi komunikasi antara guru BK dan siswa.' },
+  { id: 29, name: 'E-BAP', sub: 'Berita Acara Pemeriksaan Digital · Imigrasi', folder: '29.bap', cover: 1, repo: 'bap-imigrasi.git',
+    desc: 'Sistem pengelolaan berita acara pemeriksaan digital untuk kantor imigrasi. Dilengkapi tanda tangan digital dan arsip dokumen sehingga berkas lebih rapi dan mudah dicari.' },
+  { id: 28, name: 'SIPELWA', sub: 'Pelayanan Warga Negara Asing', folder: '28.pelayanan', cover: 1, repo: 'pelayanan.git',
+    desc: 'Sistem pelayanan warga negara asing berbasis web untuk mempermudah administrasi, pendataan, dan pemantauan status permohonan izin.' },
+  { id: 27, name: 'E-UMKM', sub: 'Pengajuan & Verifikasi UMKM', folder: '27.umkm', cover: 1, repo: 'umkm.git',
+    desc: 'Sistem pengajuan dan verifikasi UMKM secara online. Memudahkan registrasi, validasi data usaha, dan pelaporan kepada dinas terkait.' },
+  { id: 26, name: 'WMS Gudang', sub: 'Manajemen Gudang & Inventori', folder: '26.warehouse', cover: 1, repo: 'warehouse.git',
+    desc: 'Sistem manajemen gudang dengan pencatatan stok, penerimaan dan pengeluaran barang, serta laporan inventory berkala.' },
+  { id: 25, name: 'E-Pengadaan', sub: 'Pengadaan Barang Terintegrasi', folder: '25.pengadaan', cover: 2, repo: 'pengadaan-barang.git',
+    desc: 'Sistem pengadaan barang yang mengotomatisasi alur permintaan, persetujuan, pembelian, dan penerimaan barang dalam satu platform terintegrasi.' },
+  { id: 24, name: 'PerpusQR', sub: 'E-Perpustakaan Berbasis QR Code', folder: '24.perpus-qr', cover: 9, repo: 'perpus-qr.git',
+    desc: 'Perpustakaan digital dengan peminjaman buku lewat QR code, pencarian koleksi, manajemen anggota, dan notifikasi pengembalian otomatis.' },
+  { id: 23, name: 'MenuOrder', sub: 'Pemesanan Makanan Online', folder: '23.ma', cover: 1, repo: 'menu-ordering.git',
+    desc: 'Sistem pemesanan makanan berbasis web dengan menu interaktif, keranjang belanja, dan manajemen meja. Pesanan masuk ke dapur secara real-time.' },
+  { id: 22, name: 'SIMOBAT', sub: 'Manajemen Stok Obat Apotek', folder: '22.stock-obat', cover: 2, repo: 'stock-obat.git',
+    desc: 'Sistem manajemen stok obat apotek dengan notifikasi stok menipis, pemantauan tanggal kedaluwarsa, dan laporan penggunaan obat bulanan.' },
+  { id: 21, name: 'InvenBan', sub: 'Inventori Toko Ban Motor', folder: '21.inventori-ban', cover: 5, repo: 'inventori-toko-ban.git',
+    desc: 'Sistem inventori khusus toko ban motor dengan pengelolaan stok berdasarkan ukuran, merek, dan tipe ban, serta laporan penjualan harian.' },
+  { id: 20, name: 'SPK-Prestasi', sub: 'Seleksi Siswa Berprestasi · Profile Matching', folder: '20.profile-match', cover: 9, repo: 'profile-match.git',
+    desc: 'Sistem pendukung keputusan untuk menyeleksi siswa berprestasi dengan metode Profile Matching, menggunakan kriteria akademik dan non-akademik yang terukur.' },
+  { id: 19, name: 'SIREMED', sub: 'Rekam Medis Elektronik', folder: '19.rm', cover: 8, repo: 'rekam-medis.git',
+    desc: 'Rekam medis elektronik untuk klinik dan puskesmas, mencakup riwayat kunjungan pasien, resep digital, dan laporan statistik kesehatan.' },
+  { id: 18, name: 'TopSiswa', sub: 'Penentuan Siswa Terbaik · Metode TOPSIS', folder: '18.topsis', cover: 6, repo: 'topsis.git',
+    desc: 'Sistem pendukung keputusan untuk menentukan siswa terbaik dengan metode TOPSIS. Bobot setiap kriteria dapat diatur sendiri oleh admin.' },
+  { id: 17, name: 'SIMTER', sub: 'Manajemen Terminal Bus', folder: '17.terminal', cover: 2, repo: 'manajemen-terminal.git',
+    desc: 'Sistem manajemen terminal bus untuk mencatat kedatangan dan keberangkatan, data penumpang, dan retribusi, lengkap dengan laporan operasional terminal.' },
+  { id: 16, name: 'SIMCATER', sub: 'Pemesanan & Manajemen Catering', folder: '16.catering', cover: 1, repo: 'manajemen-pemesanan-catering.git',
+    desc: 'Sistem pemesanan dan manajemen catering dengan menu planner, jadwal pengiriman, invoice otomatis, dan pengelolaan bahan baku.' },
+  { id: 15, name: 'RentCar', sub: 'Rental Mobil Online', folder: '15.rental', cover: 4, repo: 'rental-mobil.git',
+    desc: 'Sistem rental mobil dengan manajemen armada, booking online, perhitungan biaya otomatis, dan laporan pendapatan berkala.' },
+  { id: 14, name: 'SILUKA', sub: 'Sistem Informasi Klinik Terintegrasi', folder: '14.siluka', cover: 5, repo: 'siluka.git',
+    desc: 'Sistem informasi klinik yang menyatukan pendaftaran pasien, antrian dokter, rekam medis, apotek, dan billing pasien secara digital.' },
+  { id: 13, name: 'AquaShop', sub: 'Toko Online Aquarium', folder: '13.aquarium', cover: 8, repo: 'penjualan-aquarium.git',
+    desc: 'Toko online aquarium dengan katalog produk, manajemen pesanan, stok ikan dan perlengkapan, serta laporan penjualan terintegrasi.' },
+  { id: 12, name: 'E-Stunting', sub: 'Monitoring Stunting Balita', folder: '12.stunting', cover: 9, repo: 'sistem-monitoring-stunting.git',
+    desc: 'Aplikasi monitoring pertumbuhan balita untuk deteksi dini stunting, dengan grafik perkembangan, peringatan risiko, dan laporan posyandu.' },
+  { id: 11, name: 'SIAS-RS', sub: 'Inventaris Aset Non-Medis Rumah Sakit', folder: '11.inventaris', cover: 1, repo: 'inventaris-barang-non-medis-rs.git',
+    desc: 'Sistem inventaris barang non-medis rumah sakit dengan QR code pada aset, mutasi barang antar departemen, dan laporan kondisi aset.' },
+  { id: 10, name: 'SIKINERJA', sub: 'Penilaian KPI Karyawan', folder: '10.kpikinerja', cover: 10, repo: 'kpi-kinerja.git',
+    desc: 'Sistem evaluasi KPI karyawan dengan indikator kinerja yang bisa disesuaikan, dashboard performa, dan laporan penilaian per periode.' },
+  { id: 9, name: 'E-Maintenance', sub: 'Perawatan Kendaraan Operasional', folder: '9.maintenance', cover: 6, repo: 'Emaintenance.git',
+    desc: 'Sistem manajemen perawatan kendaraan operasional dengan jadwal servis, riwayat perbaikan, biaya perawatan, dan pengingat servis rutin.' },
+  { id: 8, name: 'E-Surat', sub: 'Persuratan & Disposisi Digital', folder: '8.surat', cover: 4, repo: 'persuratan.git',
+    desc: 'Sistem persuratan digital untuk instansi pemerintah dan swasta, mencakup surat masuk dan keluar, disposisi, serta arsip dokumen yang tertata.' },
+  { id: 7, name: 'E-Presensi', sub: 'Absensi Karyawan Berbasis QR Code', folder: '7.presensi', cover: 1, repo: 'presensi.git',
+    desc: 'Aplikasi absensi karyawan berbasis web dengan QR code, rekap kehadiran otomatis, pengajuan izin dan cuti online, serta laporan bulanan.' },
+  { id: 6, name: 'SIM-Inventori', sub: 'Inventori Barang Umum', folder: '6.inventori', cover: 2, repo: 'inventori.git',
+    desc: 'Sistem manajemen inventori barang umum dengan pencatatan barang masuk dan keluar, peringatan stok minimum, laporan persediaan, dan manajemen supplier.' },
+  { id: 5, name: 'TaStore', sub: 'Toko Online Busana Muslim', folder: '5.tasbiha', cover: 1, repo: 'penjualan_hijab.git',
+    desc: 'Toko online busana muslim dengan katalog produk, keranjang belanja, manajemen pesanan dan pengiriman, serta laporan penjualan.' },
+  { id: 4, name: 'SparepartKu', sub: 'Penjualan Sparepart Kendaraan', folder: '4.sparepart', cover: 5, repo: 'penjualan_sparepart.git',
+    desc: 'Sistem penjualan sparepart kendaraan dengan stok per kategori, pencarian cepat, transaksi kasir, dan laporan stok harian.' },
+  { id: 3, name: 'StokRoti', sub: 'Inventori Bahan Baku Roti · Metode FIFO', folder: '3.roti', cover: 1, repo: 'inventori-bahan-roti-fifo.git',
+    desc: 'Sistem inventori bahan baku roti dengan metode FIFO agar bahan yang paling lama dipakai lebih dulu, dilengkapi peringatan kedaluwarsa.' },
+  { id: 2, name: 'E-Tiket Bus', sub: 'Tiket & Penyewaan Bus Online', folder: '2.bus', cover: 6, repo: 'E-Tiket.git',
+    desc: 'Platform pemesanan tiket dan penyewaan bus online dengan pilihan kursi interaktif, pembayaran digital, dan manajemen armada.' },
+  { id: 1, name: 'E-Cuti', sub: 'Pengajuan Cuti Pegawai', folder: '1.cuti', cover: 1, repo: 'Sistem-Pengajuan-Cuti-Pegawai-Berbasis-Web.git',
+    desc: 'Sistem pengajuan cuti pegawai digital dengan persetujuan berjenjang, kalender cuti tim, saldo cuti otomatis, dan notifikasi status.' }
 ];
+
+const featuredProjects = rawProjects.map(p => ({
+  id: p.id,
+  name: p.name,
+  sub: p.sub,
+  desc: p.desc,
+  img: `images/${p.folder}/${p.cover}.PNG`,
+  github: GH + p.repo,
+  images: Array.from({ length: 10 }, (_, i) => `images/${p.folder}/${i + 1}.PNG`)
+}));
 
 /* ── Testimonials data ── */
 const testimonials = [
@@ -151,6 +206,7 @@ window.addEventListener('resize', revealFallbackSweep);
 
 /* =========================================================
    RENDER PORTFOLIO PREVIEW
+   Card: thumbnail, nama aplikasi, jenis/metode, teknologi.
    ========================================================= */
 const grid = document.getElementById('portfolio-grid');
 if (grid) {
@@ -160,11 +216,12 @@ if (grid) {
     col.innerHTML = `
       <div class="pf-card reveal" style="transition-delay:${(i % 6) * 0.06}s" data-id="${p.id}">
         <div class="pf-thumb-wrap">
-          <img class="pf-thumb" src="${p.img}" alt="${p.title}"
+          <img class="pf-thumb" src="${p.img}" alt="${p.name}" loading="lazy"
                onerror="this.outerHTML='<div class=\\'pf-thumb-ph\\'><i class=\\'fas fa-diagram-project\\'></i></div>'">
         </div>
         <div class="pf-body">
-          <div class="pf-title">${p.title}</div>
+          <div class="pf-title">${p.name}</div>
+          <span class="pf-sub">${p.sub}</span>
           <span class="pf-link">Lihat Detail <i class="fas fa-arrow-up-right-from-square"></i></span>
         </div>
       </div>`;
@@ -182,6 +239,7 @@ if (grid) {
 const pfModal   = document.getElementById('pf-modal');
 const pfGallery = document.getElementById('pf-modal-gallery');
 const pfTitle   = document.getElementById('pf-modal-title');
+const pfSub     = document.getElementById('pf-modal-sub');
 const pfDesc    = document.getElementById('pf-modal-desc');
 
 const lightbox    = document.getElementById('lightbox');
@@ -210,14 +268,15 @@ document.addEventListener('keydown', (e) => {
 });
 
 function openPfModal(project) {
-  pfTitle.textContent = project.title;
+  pfTitle.textContent = project.name;
+  pfSub.textContent = project.sub;
   pfDesc.textContent = project.desc;
 
   pfGallery.innerHTML = '';
   project.images.forEach((src, i) => {
     const img = document.createElement('img');
     img.src = src;
-    img.alt = `${project.title} - foto ${i + 1}`;
+    img.alt = `${project.name} - tampilan ${i + 1}`;
     img.loading = 'lazy';
     img.onerror = () => { img.style.display = 'none'; };
     img.addEventListener('click', () => openLightbox(img.src, img.alt));

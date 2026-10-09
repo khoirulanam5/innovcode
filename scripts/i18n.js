@@ -9,11 +9,10 @@
     /* nav */
     ['Layanan', 'Services'], ['Harga', 'Pricing'], ['Proses', 'Process'], ['Portofolio', 'Portfolio'], ['Kontak', 'Contact'],
     ['Mulai Proyek', 'Start a Project'],
-    /* hero */
+    /* hero (badge & kartu CTA kini menyatu di dalam gambar, jadi tidak diterjemahkan di sini) */
     ['Tampil profesional, mudah dikelola, dan siap melayani pelanggan Anda 24 jam. Kami bangun sesuai kebutuhan, bukan sekadar tampilan.',
      'Look professional, stay easy to manage, and serve your customers 24/7. We build around your needs, not just appearance.'],
     ['Konsultasi', 'Consultation'], ['Proyek Selesai', 'Projects Completed'], ['Tahun Pengalaman', 'Years of Experience'], ['Tepat Rilis', 'On-Time Release'],
-    ['Support KA Inovasi Digital', 'KA Inovasi Digital Support'], ['Mulai Bangun', 'Start Building'], ['Sekarang', 'Now'],
     /* about */
     ['Tentang Kami', 'About Us'],
     ['Solusi digital yang dibangun', 'Digital solutions built'], ['untuk pertumbuhan bisnis Anda.', 'for your business growth.'],
@@ -119,47 +118,48 @@
     ['Online Sekarang', 'Online Now'], ['Ada yang bisa kami bantu?', 'How can we help you?'], ['Hubungi WhatsApp', 'Contact via WhatsApp']
   ];
 
-  /* Project [title, description] dalam English, berdasarkan id project */
+  /* Portofolio English, berdasarkan id project: [jenis/metode, deskripsi].
+     Nama aplikasi (name) tidak diterjemahkan. */
   const P = {
-    39: ['Inventory App (ROP & Safety Stock)', 'Web-based inventory system that automates recording of incoming/outgoing goods and raw material stock in real time, using Reorder Point (ROP) and Safety Stock to determine the right reorder time and prevent stockouts.'],
-    38: ['Location-Based Market Kiosk Monitoring App (SAW)', 'Location-based monitoring system for traditional market kiosks showing kiosk status and occupancy in real time, with Simple Additive Weighting (SAW) to prioritize vacant kiosks by accessibility, location, rent, and occupancy.'],
-    37: ['Custom Furniture Recommendation App (Fuzzy & Knapsack)', 'Furniture customization recommender using Mamdani Fuzzy Logic to assess dimension and price fit, and a Knapsack algorithm to choose the best furniture combination for room size and budget, with a 3D layout visualization.'],
-    36: ['Restock Priority DSS App (SAW)', 'Decision support system for prioritizing restocks with Simple Additive Weighting (SAW) based on stock level, sales, price, lead time, and demand, helping building-material stores control inventory more objectively.'],
-    35: ['Best Smartphone Selection DSS App', 'Decision support system for choosing the best smartphone using Multi Attribute Utility Theory (MAUT), with multiple roles (Owner, Admin, Customer), ranking phones by defined criteria and weights.'],
-    34: ['Restaurant App', 'Web-based restaurant management system handling the order flow from cashier to kitchen, sales transactions, and raw material stock using First In First Out (FIFO) to reduce expiry risk.'],
-    33: ['Hotel Room Recommendation App', 'Hotel room facility recommender using the Apriori and FP-Growth algorithms to efficiently find association patterns in guest transaction data.'],
-    32: ['Cashier Management App', 'Web-based cashier app for managing sales transactions, product stock, daily reports, and customer data in real time.'],
-    31: ['Agricultural Equipment Aid App', 'Information system for submitting and managing agricultural equipment aid, streamlining administration between farmers and the relevant agency.'],
-    30: ['Guidance Counseling App', 'Student counseling management system for recording sessions, progress reports, and communication between counselors and students.'],
-    29: ['Official Report (Berita Acara) App', 'Digital system for managing official examination reports for an immigration office, with digital signatures and document archiving.'],
-    28: ['Foreign Nationals Service App', 'Web-based service system for foreign nationals to simplify administration, data collection, and permit application status monitoring.'],
-    27: ['MSME Submission App', 'Online MSME submission and verification system that simplifies registration, business data validation, and reporting to the relevant agency.'],
-    26: ['Warehouse Inventory App', 'Comprehensive warehouse management system with stock recording, goods receipt and issue, and periodic inventory reports.'],
-    25: ['Procurement App', 'Procurement system that automates requests, approvals, purchasing, and goods receipt in one integrated platform.'],
-    24: ['E-Library App', 'Digital library with QR code book lending, collection search, member management, and automatic return notifications.'],
-    23: ['Food Ordering App', 'Web-based food ordering system with an interactive menu, shopping cart, table management, and real-time kitchen orders.'],
-    22: ['Medicine Stock App', 'Pharmacy medicine stock system with low-stock notifications, expiry date monitoring, and monthly usage reports.'],
-    21: ['Motorcycle Tire Shop Inventory', 'Inventory system for motorcycle tire shops with stock management by size, brand, and type, plus daily sales reports.'],
-    20: ['Outstanding Student Selection', 'Decision support system for selecting outstanding students using Profile Matching with measurable academic and non-academic criteria.'],
-    19: ['Medical Records App', 'Electronic medical records for clinics and community health centers with visit history, digital prescriptions, and health statistics reports.'],
-    18: ['Best Student Determination App', 'Decision support system for determining the best student using TOPSIS, with criteria weights configurable by the admin.'],
-    17: ['Terminal Management App', 'Bus terminal management system for recording arrivals/departures, passenger data, fees, and operational reports.'],
-    16: ['Catering Management App', 'Catering order and management system with a menu planner, delivery schedule, automatic invoices, and raw material management.'],
-    15: ['Car Rental App', 'Complete car rental system with fleet management, online booking, automatic cost calculation, and periodic revenue reports.'],
-    14: ['Clinic Management App', 'Integrated clinic information system covering patient registration, doctor queues, medical records, pharmacy, and digital patient billing.'],
-    13: ['Aquarium Sales App', 'Online aquarium store with a product catalog, order management, fish and equipment stock, and integrated sales reports.'],
-    12: ['Stunting Data Monitoring App', 'Web-based toddler growth monitoring for early stunting detection, with growth charts, risk alerts, and posyandu reports.'],
-    11: ['Inventory App', 'Non-medical hospital inventory system with asset QR codes, inter-department transfers, and asset condition reports.'],
-    10: ['Employee KPI App', 'Employee KPI evaluation system with customizable performance indicators, a performance dashboard, and per-period assessment reports.'],
-    9: ['Vehicle Maintenance App', 'Operational vehicle maintenance management with service schedules, repair history, maintenance costs, and routine schedule alerts.'],
-    8: ['Correspondence App', 'Digital correspondence system for government and private institutions with incoming/outgoing mail, dispositions, and structured document archives.'],
-    7: ['Attendance App', 'Web-based employee attendance with QR code integration, automatic attendance recap, online leave requests, and monthly reports.'],
-    6: ['Inventory App', 'General inventory management with in/out recording, minimum stock alerts, stock reports, and supplier management.'],
-    5: ['Hijab Sales App', 'Muslim fashion online store with a product catalog, shopping cart, order and shipping management, and sales reports.'],
-    4: ['Spare Parts Sales App', 'Vehicle spare parts sales system with per-category stock management, quick search, cashier transactions, and daily stock reports.'],
-    3: ['Bread Raw Material Inventory', 'Bread raw material inventory using FIFO so the oldest materials are used first, with expiry alerts.'],
-    2: ['E-Ticket & Bus Rental App', 'Online bus ticketing and rental platform with interactive seat selection, digital payments, and fleet management.'],
-    1: ['Employee Leave Request App', 'Digital leave request system with multi-level approval, team leave calendar, automatic leave balance, and status notifications.']
+    39: ['Raw Material Inventory · ROP & Safety Stock', 'Web-based inventory app that records incoming goods, outgoing goods, and raw material stock in real time. It uses the Reorder Point (ROP) and Safety Stock methods so the system tells you when to reorder raw materials, preventing stockouts.'],
+    38: ['Market Kiosk Monitoring · SAW Method', 'Location-based monitoring app for traditional market kiosks that shows each kiosk\'s status and occupancy in real time. Simple Additive Weighting (SAW) prioritizes which vacant kiosks to handle first based on accessibility, location, rent, and occupancy.'],
+    37: ['Furniture Recommendation · Fuzzy & Knapsack', 'Custom furniture recommendation app. Mamdani Fuzzy Logic assesses dimension and price fit, then a Knapsack algorithm picks the best furniture combination for the room size and budget. Results are shown in a 3D layout visualization.'],
+    36: ['Restock Priority · SAW Method', 'Decision support system that helps building-material stores decide which items to restock first. SAW scores stock level, sales, price, lead time, and demand, making inventory control more objective.'],
+    35: ['Best Smartphone DSS · MAUT Method', 'Decision support system for choosing the best smartphone using Multi Attribute Utility Theory (MAUT). It has three user roles (Owner, Admin, Customer) and ranks smartphones based on the defined criteria and weights.'],
+    34: ['Restaurant Management · FIFO Stock', 'Restaurant management information system that handles the order flow from cashier to kitchen and records sales transactions. Raw material stock follows First In First Out (FIFO) to reduce the risk of expired ingredients.'],
+    33: ['Room Facility Recommendation · Apriori & FP-Growth', 'Hotel room facility recommendation system. Apriori and FP-Growth algorithms mine association patterns from guest transaction data, so the hotel knows which facility combinations are chosen most often.'],
+    32: ['Cashier & Sales App', 'Web-based cashier app for managing sales transactions, product stock, and customer data, with daily reports updated in real time.'],
+    31: ['Agricultural Equipment Aid Management', 'Information system for submitting and managing agricultural equipment aid. It simplifies administration between farmers and the relevant agency.'],
+    30: ['Student Guidance Counseling', 'School counseling management system for recording counseling sessions, preparing student progress reports, and supporting communication between counselors and students.'],
+    29: ['Digital Examination Report · Immigration', 'Digital system for managing official examination reports at an immigration office. Digital signatures and document archiving keep files neat and easy to find.'],
+    28: ['Foreign Nationals Service', 'Web-based service system for foreign nationals that simplifies administration, data collection, and permit application status tracking.'],
+    27: ['MSME Submission & Verification', 'Online MSME submission and verification system. It simplifies registration, business data validation, and reporting to the relevant agency.'],
+    26: ['Warehouse & Inventory Management', 'Warehouse management system with stock recording, goods receipt and issue, and periodic inventory reports.'],
+    25: ['Integrated Procurement', 'Procurement system that automates the flow of requests, approvals, purchasing, and goods receipt in one integrated platform.'],
+    24: ['QR Code E-Library', 'Digital library with QR code book lending, collection search, member management, and automatic return notifications.'],
+    23: ['Online Food Ordering', 'Web-based food ordering system with an interactive menu, shopping cart, and table management. Orders reach the kitchen in real time.'],
+    22: ['Pharmacy Medicine Stock Management', 'Pharmacy medicine stock system with low-stock notifications, expiry date monitoring, and monthly medicine usage reports.'],
+    21: ['Motorcycle Tire Shop Inventory', 'Inventory system for motorcycle tire shops, managing stock by tire size, brand, and type, with daily sales reports.'],
+    20: ['Outstanding Student Selection · Profile Matching', 'Decision support system for selecting outstanding students with the Profile Matching method, using measurable academic and non-academic criteria.'],
+    19: ['Electronic Medical Records', 'Electronic medical records for clinics and community health centers, covering patient visit history, digital prescriptions, and health statistics reports.'],
+    18: ['Best Student Selection · TOPSIS Method', 'Decision support system for determining the best student with the TOPSIS method. The weight of each criterion can be set by the admin.'],
+    17: ['Bus Terminal Management', 'Bus terminal management system for recording arrivals and departures, passenger data, and fees, complete with terminal operational reports.'],
+    16: ['Catering Ordering & Management', 'Catering order and management system with a menu planner, delivery schedule, automatic invoices, and raw material management.'],
+    15: ['Online Car Rental', 'Car rental system with fleet management, online booking, automatic cost calculation, and periodic revenue reports.'],
+    14: ['Integrated Clinic Information System', 'Clinic information system that brings together patient registration, doctor queues, medical records, pharmacy, and digital patient billing.'],
+    13: ['Online Aquarium Store', 'Online aquarium store with a product catalog, order management, fish and equipment stock, and integrated sales reports.'],
+    12: ['Toddler Stunting Monitoring', 'Toddler growth monitoring app for early stunting detection, with growth charts, risk alerts, and posyandu reports.'],
+    11: ['Hospital Non-Medical Asset Inventory', 'Non-medical hospital inventory system with asset QR codes, inter-department transfers, and asset condition reports.'],
+    10: ['Employee KPI Assessment', 'Employee KPI evaluation system with customizable performance indicators, a performance dashboard, and per-period assessment reports.'],
+    9: ['Operational Vehicle Maintenance', 'Operational vehicle maintenance management with service schedules, repair history, maintenance costs, and routine service reminders.'],
+    8: ['Digital Correspondence & Disposition', 'Digital correspondence system for government and private institutions, covering incoming and outgoing mail, dispositions, and well-organized document archives.'],
+    7: ['QR Code Employee Attendance', 'Web-based employee attendance app with QR codes, automatic attendance recap, online leave and permission requests, and monthly reports.'],
+    6: ['General Goods Inventory', 'General inventory management with in/out recording, minimum stock alerts, stock reports, and supplier management.'],
+    5: ['Muslim Fashion Online Store', 'Muslim fashion online store with a product catalog, shopping cart, order and shipping management, and sales reports.'],
+    4: ['Vehicle Spare Parts Sales', 'Vehicle spare parts sales system with per-category stock, quick search, cashier transactions, and daily stock reports.'],
+    3: ['Bread Raw Material Inventory · FIFO Method', 'Bread raw material inventory using FIFO so the oldest materials are used first, with expiry alerts.'],
+    2: ['Online Bus Ticketing & Rental', 'Online bus ticketing and rental platform with interactive seat selection, digital payments, and fleet management.'],
+    1: ['Employee Leave Requests', 'Digital employee leave request system with tiered approval, a team leave calendar, automatic leave balance, and status notifications.']
   };
 
   const idx = new Map();
@@ -167,7 +167,7 @@
   const norm = s => s.replace(/\s+/g, ' ').trim();
   const orig = new WeakMap();
   const i = () => (lang === 'en' ? 1 : 0);
-  const SKIP = 'script,style,.pf-title,#pf-modal-title,#pf-modal-desc';
+  const SKIP = 'script,style,.pf-title,.pf-sub,#pf-modal-title,#pf-modal-sub,#pf-modal-desc';
 
   function translateText() {
     const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
@@ -191,17 +191,18 @@
     });
   }
 
-  const proj = p => (lang === 'en' && P[p.id]) ? { title: P[p.id][0], desc: P[p.id][1] } : { title: p.title, desc: p.desc };
+  /* Nama aplikasi selalu sama; jenis/metode dan deskripsi mengikuti bahasa */
+  const proj = p => (lang === 'en' && P[p.id])
+    ? { name: p.name, sub: P[p.id][0], desc: P[p.id][1] }
+    : { name: p.name, sub: p.sub, desc: p.desc };
 
   function translateProjects() {
     document.querySelectorAll('#portfolio-grid .pf-card').forEach(card => {
       const p = featuredProjects.find(x => String(x.id) === card.dataset.id);
       if (!p) return;
       const t = proj(p);
-      const title = card.querySelector('.pf-title');
-      const img = card.querySelector('.pf-thumb');
-      if (title) title.textContent = t.title;
-      if (img) img.alt = t.title;
+      const sub = card.querySelector('.pf-sub');
+      if (sub) sub.textContent = t.sub;
     });
   }
 
@@ -211,7 +212,8 @@
   function fillModal() {
     if (!currentProject) return;
     const t = proj(currentProject);
-    document.getElementById('pf-modal-title').textContent = t.title;
+    document.getElementById('pf-modal-title').textContent = t.name;
+    document.getElementById('pf-modal-sub').textContent = t.sub;
     document.getElementById('pf-modal-desc').textContent = t.desc;
   }
   window.openPfModal = function (p) { baseOpen(p); currentProject = p; fillModal(); };
