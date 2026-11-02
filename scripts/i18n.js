@@ -42,10 +42,10 @@
     /* pricing (disamakan dengan teks di index.html) */
     ['Daftar Harga', 'Price List'], ['Paket harga transparan,', 'Transparent pricing,'], ['sesuai kebutuhan Anda.', 'tailored to your needs.'],
     ['Pilih paket yang sesuai skala bisnis Anda. Harga dapat disesuaikan lagi setelah sesi konsultasi.', 'Choose the plan that fits your business scale. Prices can be adjusted after the consultation.'],
-    ['Website Sederhana', 'Simple Website'], ['1 – 5 halaman', '1 – 5 pages'], ['Desain profesional', 'Professional design'], ['Google Maps', 'Google Maps'], ['Form kontak', 'Contact form'], ['3 Hari Selesai', 'Done in 3 Days'],
-    ['Website Profil Usaha', 'Business Profile Website'], ['7 – 10 halaman', '7 – 10 pages'], ['Admin panel', 'Admin panel'], ['Dashboard Admin', 'Admin dashboard'], ['7 Hari Selesai', 'Done in 7 Days'],
-    ['Paling Diminati', 'Most Popular'], ['Aplikasi internal', 'Internal applications'], ['Dashboard admin', 'Admin dashboard'], ['Data master', 'Master data'], ['Kustom web', 'Custom web'], ['10 Hari Selesai', 'Done in 10 Days'],
-    ['Sistem ERP', 'ERP System'], ['Multi modul', 'Multi-module'], ['Manajemen role', 'Role management'], ['Integrasi API', 'API integration'], ['Arsitektur skalabel', 'Scalable architecture'], ['20+ Hari Selesai', '20+ Days'],
+    ['Website Sederhana', 'Simple Website'], ['1 – 5 halaman', '1 – 5 pages'], ['Desain profesional', 'Professional design'], ['Google Maps', 'Google Maps'], ['Form kontak', 'Contact form'], ['Domain Free 1 Tahun', 'Free domain for 1 year'],,
+    ['Website Profil Usaha', 'Business Profile Website'], ['7 – 10 halaman', '7 – 10 pages'], ['Admin panel', 'Admin panel'], ['Dashboard Admin', 'Admin dashboard'], ['Domain Free 1 Tahun', 'Free domain for 1 year'],,
+    ['Paling Diminati', 'Most Popular'], ['Aplikasi internal', 'Internal applications'], ['Dashboard admin', 'Admin dashboard'], ['Data master', 'Master data'], ['Kustom web', 'Custom web'], ['Domain Free 1 Tahun', 'Free domain for 1 year'],,
+    ['Sistem ERP', 'ERP System'], ['Multi modul', 'Multi-module'], ['Manajemen role', 'Role management'], ['Integrasi API', 'API integration'], ['Arsitektur skalabel', 'Scalable architecture'], ['Domain Free 1 Tahun', 'Free domain for 1 year'],,
     ['Mulai Dari', 'Starting From'], ['Pilih Paket', 'Choose Plan'],
     ['Harga di atas adalah estimasi awal. Kebutuhan fitur tambahan atau kompleksitas khusus akan dibahas saat konsultasi.', 'Prices above are initial estimates. Additional features or special complexity will be discussed during the consultation.'],
     /* process */
